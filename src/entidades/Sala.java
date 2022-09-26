@@ -62,4 +62,6 @@ public abstract class Sala {
     public void addHorarioNoite(Aluno horarioNoite){
         horariosNoiteList.add(horarioNoite);
     }
+
+    public abstract boolean isFull(Aluno aluno) throws Exception;
 }

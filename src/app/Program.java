@@ -6,7 +6,7 @@ import entidades.Profissional;
 import entidades.Boxe;
 import entidades.Hidroginastica;
 import entidades.Spinning;
-import services.BoxeFinanceiroServiceBoxe;
+import services.BoxeFinanceiroService;
 import services.HidroginasticaFinanceiroService;
 import services.SpinningFinanceiroService;
 
@@ -21,7 +21,7 @@ public class Program {
     static Boxe ba = new Boxe();
     static Hidroginastica ha = new Hidroginastica();
     static Spinning sa = new Spinning();
-    static BoxeFinanceiroServiceBoxe bfs = new BoxeFinanceiroServiceBoxe();
+    static BoxeFinanceiroService bfs = new BoxeFinanceiroService();
     static HidroginasticaFinanceiroService hfs = new HidroginasticaFinanceiroService();
     static SpinningFinanceiroService sfs = new SpinningFinanceiroService();
     static Gym gym = new Gym(bfs, hfs, sfs, ba, ha, sa);
@@ -31,6 +31,7 @@ public class Program {
             try {
                 System.out.println("+----------------------------------------------+");
                 System.out.println("|               Think Big Gym                  |");
+                System.out.println();
                 System.out.println("+----------------------------------------------+");
                 System.out.println("|           *** MENU PRINCIPAL ***             |");
                 System.out.println("+----------------------------------------------+");
@@ -117,20 +118,20 @@ public class Program {
         try {
             switch (op) {
                 case 1:
-                    if(ba.isFull()){
+                    System.out.println("+----------------------------------------------+");
+                    System.out.println("|         *** ESCOLHA UM HORÁRIO ***           |");
+                    System.out.println("+----------------------------------------------+");
+                    System.out.println("| 1.Boxe                 seg     qua     sex   |");
+                    System.out.println("|    .Horários     ~    09:00 - 15:00 - 19:00  |");
+                    System.out.println("+----------------------------------------------+");
+                    System.out.print("| DIA (dd): ");
+                    aluno.setDiaAula(sdfDia.parse(sc.next()));
+                    System.out.print("| HORÁRIO (HH:mm): ");
+                    aluno.setHorarioAula(sdfHora.parse(sc.next()));
+                    if(ba.isFull(aluno)){
+                        msgErroTurmaCheia(aluno);
                         escolherHorario(1, aluno);
                     } else {
-                        System.out.println("+----------------------------------------------+");
-                        System.out.println("|         *** ESCOLHA UM HORÁRIO ***           |");
-                        System.out.println("+----------------------------------------------+");
-                        System.out.println("| 1.Boxe                 seg     qua     sex   |");
-                        System.out.println("|    .Horários     ~    09:00 - 15:00 - 19:00  |");
-                        System.out.println("+----------------------------------------------+");
-                        System.out.print("| DIA (dd): ");
-                        aluno.setDiaAula(sdfDia.parse(sc.next()));
-                        System.out.print("| HORÁRIO (HH:mm): ");
-                        aluno.setHorarioAula(sdfHora.parse(sc.next()));
-                        System.out.println("+----------------------------------------------+");
                         ba.addAluno(aluno);
                         ba.setAulaBoxe(aluno);
                     }
@@ -146,7 +147,10 @@ public class Program {
                     aluno.setDiaAula(sdfDia.parse(sc.next()));
                     System.out.print("| HORÁRIO (HH:mm): ");
                     aluno.setHorarioAula(sdfHora.parse(sc.next()));
-                    System.out.println("+----------------------------------------------+");
+                    if(ha.isFull(aluno)){
+                        msgErroTurmaCheia(aluno);
+                        escolherHorario(2, aluno);
+                    }
                     ha.addAluno(aluno);
                     ha.setAulaHidroginastica(aluno);
                     break;
@@ -161,7 +165,10 @@ public class Program {
                     aluno.setDiaAula(sdfDia.parse(sc.next()));
                     System.out.print("| HORÁRIO (HH:mm): ");
                     aluno.setHorarioAula(sdfHora.parse(sc.next()));
-                    System.out.println("+----------------------------------------------+");
+                    if(sa.isFull(aluno)){
+                        msgErroTurmaCheia(aluno);
+                        escolherHorario(3, aluno);
+                    }
                     sa.addAluno(aluno);
                     sa.setAulaSpinning(aluno);
                     break;
@@ -353,6 +360,10 @@ public class Program {
         System.out.println("|  *** CADASTRO REALIZADO COM SUCESSO! ***     |");
         System.out.println("+----------------------------------------------+");
         System.out.println("************************************************");
+    }
+
+    public static void msgErroTurmaCheia(Aluno aluno) throws ParseException {
+        System.out.printf("| Turma das '%s' horas CHEIA, escolha outro Horário!\n", sdfHora.format(aluno.getHorarioAula()));
     }
 
     public static void financeiro() {

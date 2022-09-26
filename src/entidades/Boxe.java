@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.util.List;
 
 public class Boxe extends Sala {
-    public static final int AULA_MANHA_SIZE = 2;
+    public static final int AULA_MANHA_SIZE = 1;
     public static final int AULA_TARDE_SIZE = 5;
     public static final int AULA_NOITE_SIZE = 5;
     public static final String HORARIO_MANHA_BOXE = "09:00";
@@ -65,6 +65,19 @@ public class Boxe extends Sala {
 
     public void addHorarioNoite(Aluno horarioNoite) {
         horariosNoiteList.add(horarioNoite);
+    }
+
+    @Override
+    public boolean isFull(Aluno aluno) throws Exception {
+        if(horariosManhaList.size() == AULA_MANHA_SIZE && aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_MANHA_BOXE))){
+            return true;
+        } else if(horariosTardeList.size() == AULA_TARDE_SIZE && aluno.getHorarioAula().equals(sdfHora.parse((HORARIO_TARDE_BOXE)))){
+            return true;
+        } else if(horariosNoiteList.size() == AULA_NOITE_SIZE && aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_NOITE_BOXE))){
+            return true;
+        } else{
+            return false;
+        }
     }
 
     public void setAulaBoxe(Aluno aluno) throws Exception {
@@ -178,13 +191,5 @@ public class Boxe extends Sala {
             return sb.toString();
         }
         return "Sem alunos para a aula selecionada!";
-    }
-
-    public boolean isFull(){
-        if(horariosManhaList.size() == AULA_MANHA_SIZE ){
-            return true;
-
-        }
-        return false;
     }
 }

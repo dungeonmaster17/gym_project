@@ -69,6 +69,19 @@ public class Spinning extends Sala {
         horariosNoiteList.add(horarioNoite);
     }
 
+    @Override
+    public boolean isFull(Aluno aluno) throws ParseException {
+        if(horariosManhaList.size() == AULA_MANHA_SIZE && aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_MANHA_SPINNING))){
+            return true;
+        } else if(horariosTardeList.size() == AULA_TARDE_SIZE && aluno.getHorarioAula().equals(sdfHora.parse((HORARIO_TARDE_SPINNING)))){
+            return true;
+        } else if(horariosNoiteList.size() == AULA_NOITE_SIZE && aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_NOITE_SPINNING))){
+            return true;
+        } else{
+            return false;
+        }
+    }
+
     public void setAulaSpinning(Aluno aluno) throws Exception {
         if (aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_MANHA_SPINNING))) {
             if (horariosManhaList.size() < AULA_MANHA_SIZE) {

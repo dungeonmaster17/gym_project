@@ -3,12 +3,12 @@ package services;
 import entidades.Boxe;
 import interfaces.BoxeGymService;
 
-public class BoxeFinanceiroServiceBoxe implements BoxeGymService {
+public class BoxeFinanceiroService implements BoxeGymService {
     public static final double VALOR_HORA_AULA_BOXE_MANHA = 120.00;
     public static final double VALOR_HORA_AULA_BOXE_TARDE = 120.00;
     public static final double VALOR_HORA_AULA_BOXE_NOITE = 120.00;
 
-    public BoxeFinanceiroServiceBoxe() {
+    public BoxeFinanceiroService() {
     }
 
     @Override
