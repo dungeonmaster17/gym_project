@@ -36,7 +36,6 @@ public class Gym {
         this.spinningAula = spinningAula;
     }
 
-
     public String getNome() {
         return nome;
     }

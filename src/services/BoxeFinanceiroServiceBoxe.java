@@ -8,6 +8,9 @@ public class BoxeFinanceiroServiceBoxe implements BoxeGymService {
     public static final double VALOR_HORA_AULA_BOXE_TARDE = 120.00;
     public static final double VALOR_HORA_AULA_BOXE_NOITE = 120.00;
 
+    public BoxeFinanceiroServiceBoxe() {
+    }
+
     @Override
     public Double getValorTotalAulaBoxeByManha(Boxe boxe){
         return boxe.getHorariosManhaList().size() * VALOR_HORA_AULA_BOXE_MANHA;

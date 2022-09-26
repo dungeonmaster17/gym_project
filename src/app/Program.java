@@ -25,11 +25,7 @@ public class Program {
     static HidroginasticaFinanceiroService hfs = new HidroginasticaFinanceiroService();
     static SpinningFinanceiroService sfs = new SpinningFinanceiroService();
     static Gym gym = new Gym(bfs, hfs, sfs, ba, ha, sa);
-
     public static void main(String[] args) {
-        ba.setGym(gym);
-        ha.setGym(gym);
-        sa.setGym(gym);
         boolean loop = true;
         while (loop) {
             try {
