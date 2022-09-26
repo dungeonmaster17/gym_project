@@ -193,10 +193,7 @@ public class Program {
         aluno.setEmail(sc.next());
         System.out.print("| CPF: ");
         aluno.setCpf(sc.next());
-        System.out.println("+----------------------------------------------+");
-        System.out.println("|  *** CADASTRO REALIZADO COM SUCESSO! ***     |");
-        System.out.println("+----------------------------------------------+");
-        System.out.println("************************************************");
+        msgSucessoCadastro();
     }
 
     public static void relacaoAlunos() throws ParseException {
@@ -340,15 +337,15 @@ public class Program {
         switch (opProf) {
             case 1:
                 ba.setProfissional(profissional);
-                profissionalSucessoCadastro();
+                msgSucessoCadastro();
                 break;
             case 2:
                 ha.setProfissional(profissional);
-                profissionalSucessoCadastro();
+                msgSucessoCadastro();
                 break;
             case 3:
                 sa.setProfissional(profissional);
-                profissionalSucessoCadastro();
+                msgSucessoCadastro();
                 break;
         }
     }
@@ -433,7 +430,7 @@ public class Program {
         System.out.println("************************************************");
     }
 
-    public static void profissionalSucessoCadastro() {
+    public static void msgSucessoCadastro() {
         System.out.println("+----------------------------------------------+");
         System.out.println("|  *** CADASTRO REALIZADO COM SUCESSO! ***     |");
         System.out.println("+----------------------------------------------+");
