@@ -1,22 +1,20 @@
 package app;
 
-import entidades.Aluno;
-import entidades.Gym;
-import entidades.Profissional;
-import entidades.Boxe;
-import entidades.Hidroginastica;
-import entidades.Spinning;
+import entidades.*;
 import services.BoxeFinanceiroService;
 import services.HidroginasticaFinanceiroService;
 import services.SpinningFinanceiroService;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Program {
+    static Date dateNow = new Date();
+    static SimpleDateFormat sdfNow = new SimpleDateFormat("dd/MM HH:mm");
     static SimpleDateFormat sdfHora = new SimpleDateFormat("HH:mm");
-    static SimpleDateFormat sdfDia = new SimpleDateFormat("dd");
+    static SimpleDateFormat sdfDia = new SimpleDateFormat("dd/MM");
     static Scanner sc = new Scanner(System.in);
     static Boxe ba = new Boxe();
     static Hidroginastica ha = new Hidroginastica();
@@ -31,8 +29,8 @@ public class Program {
             try {
                 System.out.println("+----------------------------------------------+");
                 System.out.println("|               Think Big Gym                  |");
-                System.out.println();
-                System.out.println("+----------------------------------------------+");
+                System.out.printf("|               '%s'                  |" , sdfNow.format(dateNow));
+                System.out.println("\n+----------------------------------------------+");
                 System.out.println("|           *** MENU PRINCIPAL ***             |");
                 System.out.println("+----------------------------------------------+");
                 System.out.println("| 01. Aulas e Horários                         |");
@@ -355,17 +353,6 @@ public class Program {
         }
     }
 
-    public static void profissionalSucessoCadastro() {
-        System.out.println("+----------------------------------------------+");
-        System.out.println("|  *** CADASTRO REALIZADO COM SUCESSO! ***     |");
-        System.out.println("+----------------------------------------------+");
-        System.out.println("************************************************");
-    }
-
-    public static void msgErroTurmaCheia(Aluno aluno) throws ParseException {
-        System.out.printf("| Turma das '%s' horas CHEIA, escolha outro Horário!\n", sdfHora.format(aluno.getHorarioAula()));
-    }
-
     public static void financeiro() {
         System.out.println("+----------------------------------------------+");
         System.out.println("|       *** RELATORIO DE PAGAMENTOS ***        |");
@@ -444,5 +431,16 @@ public class Program {
                 break;
         }
         System.out.println("************************************************");
+    }
+
+    public static void profissionalSucessoCadastro() {
+        System.out.println("+----------------------------------------------+");
+        System.out.println("|  *** CADASTRO REALIZADO COM SUCESSO! ***     |");
+        System.out.println("+----------------------------------------------+");
+        System.out.println("************************************************");
+    }
+
+    public static void msgErroTurmaCheia(Aluno aluno) throws ParseException {
+        System.out.printf("| Turma das '%s' horas CHEIA, escolha outro Horário!\n", sdfHora.format(aluno.getHorarioAula()));
     }
 }
