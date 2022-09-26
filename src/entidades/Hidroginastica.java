@@ -1,7 +1,6 @@
 package entidades;
 
 import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Hidroginastica extends Sala {
@@ -17,10 +16,6 @@ public class Hidroginastica extends Sala {
     public static final String ERRO_MSG_MANHA = "| Turma manhã CHEIA, escolha outro Horário!";
     public static final String ERRO_MSG_TARDE = "| Turma tarde CHEIA, escolha outro Horário!";
     public static final String ERRO_MSG_NOITE = "| Turma noite CHEIA, escolha outro Horário!";
-    private List<Aluno> alunosList = new ArrayList<>();
-    private List<Aluno> horariosManhaList = new ArrayList<>();
-    private List<Aluno> horariosTardeList = new ArrayList<>();
-    private List<Aluno> horariosNoiteList = new ArrayList<>();
 
     public Hidroginastica() {
         super();
@@ -52,25 +47,28 @@ public class Hidroginastica extends Sala {
     }
 
     @Override
-    public void addAluno(Aluno aluno){
+    public void addAluno(Aluno aluno) {
         alunosList.add(aluno);
     }
+
     @Override
-    public void addHorarioManha(Aluno horarioManha){
+    public void addHorarioManha(Aluno horarioManha) {
         horariosManhaList.add(horarioManha);
     }
+
     @Override
-    public void addHorarioTarde(Aluno horarioTarde){
+    public void addHorarioTarde(Aluno horarioTarde) {
         horariosTardeList.add(horarioTarde);
     }
+
     @Override
-    public void addHorarioNoite(Aluno horarioNoite){
+    public void addHorarioNoite(Aluno horarioNoite) {
         horariosNoiteList.add(horarioNoite);
     }
 
     public void setAulaHidroginastica(Aluno aluno) throws Exception {
-        if(aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_MANHA_HIDROGINASTICA))){
-            if(horariosManhaList.size() < AULA_MANHA_SIZE){
+        if (aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_MANHA_HIDROGINASTICA))) {
+            if (horariosManhaList.size() < AULA_MANHA_SIZE) {
                 addHorarioManha(aluno);
                 throw new Exception(String.format(SUCESSO_MSG_MANHA + horariosManhaList.size() + "/" + AULA_MANHA_SIZE));
             } else {
@@ -78,8 +76,8 @@ public class Hidroginastica extends Sala {
             }
         }
 
-        if(aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_TARDE_HIDROGINASTICA))){
-            if(horariosTardeList.size() < AULA_TARDE_SIZE){
+        if (aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_TARDE_HIDROGINASTICA))) {
+            if (horariosTardeList.size() < AULA_TARDE_SIZE) {
                 addHorarioTarde(aluno);
                 throw new Exception(String.format(SUCESSO_MSG_TARDE + horariosTardeList.size() + "/" + AULA_TARDE_SIZE));
             } else {
@@ -87,8 +85,8 @@ public class Hidroginastica extends Sala {
             }
         }
 
-        if(aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_NOITE_HIDROGINASTICA))){
-            if(horariosNoiteList.size() < AULA_NOITE_SIZE){
+        if (aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_NOITE_HIDROGINASTICA))) {
+            if (horariosNoiteList.size() < AULA_NOITE_SIZE) {
                 addHorarioNoite(aluno);
                 throw new Exception(String.format(SUCESSO_MSG_NOITE + horariosNoiteList.size() + "/" + AULA_NOITE_SIZE));
             } else {
@@ -97,18 +95,23 @@ public class Hidroginastica extends Sala {
         }
     }
 
-    public String findProfissionalHidroginastica(){
+    public String findProfissionalHidroginastica() {
         return " *** Aula Hidroginastica ***\n Professor(a): " + getProfissional().getNome();
     }
-    public String findAllAlunoHidroginastica(){
+
+    public String findAllAlunoHidroginastica() {
         StringBuilder sb = new StringBuilder();
-        if(!alunosList.isEmpty()){
+        if (!alunosList.isEmpty()) {
             int indiceAluno = 1;
             sb.append(" *** Todos o(s) Aluno(os) Hidroginastica ***\n");
-            for(Aluno a : alunosList){
-                sb.append(indiceAluno++ + ". ");
-                sb.append(a.getNome());
-                sb.append(" - " + sdfHora.format(a.getHorarioAula()) + "\n");
+            for (Aluno a : alunosList) {
+                sb.append("cod.: 00" + indiceAluno++ + "\n");
+                sb.append("Matricula: " + a.getMatricula() + " - ");
+                sb.append("Nome: " + a.getNome() + " " + a.getSobrenome() + " - ");
+                sb.append("Data Nasc.: " + a.getDataNascimento() + " - CPF: " + a.getCpf() + " - ");
+                sb.append("Email: " + a.getEmail());
+                sb.append(" - Horário Marcado: " + sdfHora.format(a.getHorarioAula()) + "\n");
+                sb.append("\n");
             }
             return sb.toString();
         }
@@ -117,15 +120,17 @@ public class Hidroginastica extends Sala {
 
     public String findAllAlunoHidroginasticaManha() throws ParseException {
         StringBuilder sb = new StringBuilder();
-        if(!alunosList.isEmpty()){
+        if (!alunosList.isEmpty()) {
             int indiceAluno = 1;
             sb.append(" *** Aluno(os) Hidroginastica Manha ***\n");
-            for(Aluno a : alunosList){
-                if(a.getHorarioAula().equals(sdfHora.parse(HORARIO_MANHA_HIDROGINASTICA))){
-                    sb.append(indiceAluno++ + ". ");
-                    sb.append(a.getNome());
-                    sb.append(" - " + sdfHora.format(a.getHorarioAula()) + "\n");
-                }
+            for (Aluno a : horariosManhaList) {
+                sb.append("cod.: 00" + indiceAluno++ + "\n");
+                sb.append("Matricula: " + a.getMatricula() + " - ");
+                sb.append("Nome: " + a.getNome() + " " + a.getSobrenome() + " - ");
+                sb.append("Data Nasc.: " + a.getDataNascimento() + " - CPF: " + a.getCpf() + " - ");
+                sb.append("Email: " + a.getEmail());
+                sb.append(" - Horário Marcado: " + sdfHora.format(a.getHorarioAula()) + "\n");
+                sb.append("\n");
             }
             return sb.toString();
         }
@@ -134,15 +139,17 @@ public class Hidroginastica extends Sala {
 
     public String findAllAlunoHidroginasticaTarde() throws ParseException {
         StringBuilder sb = new StringBuilder();
-        if(!alunosList.isEmpty()){
+        if (!alunosList.isEmpty()) {
             int indiceAluno = 1;
             sb.append(" ***Todos o(s) Aluno(os) Hidroginastica Tarde***\n");
-            for(Aluno a : alunosList){
-                if(a.getHorarioAula().equals(sdfHora.parse(HORARIO_TARDE_HIDROGINASTICA))){
-                    sb.append(indiceAluno++ + ". ");
-                    sb.append(a.getNome());
-                    sb.append(" - " + sdfHora.format(a.getHorarioAula()) + "\n");
-                }
+            for (Aluno a : horariosTardeList) {
+                sb.append("cod.: 00" + indiceAluno++ + "\n");
+                sb.append("Matricula: " + a.getMatricula() + " - ");
+                sb.append("Nome: " + a.getNome() + " " + a.getSobrenome() + " - ");
+                sb.append("Data Nasc.: " + a.getDataNascimento() + " - CPF: " + a.getCpf() + " - ");
+                sb.append("Email: " + a.getEmail());
+                sb.append(" - Horário Marcado: " + sdfHora.format(a.getHorarioAula()) + "\n");
+                sb.append("\n");
             }
             return sb.toString();
         }
@@ -151,15 +158,17 @@ public class Hidroginastica extends Sala {
 
     public String findAllAlunoHidroginasticaNoite() throws ParseException {
         StringBuilder sb = new StringBuilder();
-        if(!alunosList.isEmpty()){
+        if (!alunosList.isEmpty()) {
             int indiceAluno = 1;
             sb.append(" ***Aluno(os) Hidroginastica Noite***\n");
-            for(Aluno a : alunosList){
-                if(a.getHorarioAula().equals(sdfHora.parse(HORARIO_NOITE_HIDROGINASTICA))){
-                    sb.append(indiceAluno++ + ". ");
-                    sb.append(a.getNome());
-                    sb.append(" - " + sdfHora.format(a.getHorarioAula()) + "\n");
-                }
+            for (Aluno a : horariosNoiteList) {
+                sb.append("cod.: 00" + indiceAluno++ + "\n");
+                sb.append("Matricula: " + a.getMatricula() + " - ");
+                sb.append("Nome: " + a.getNome() + " " + a.getSobrenome() + " - ");
+                sb.append("Data Nasc.: " + a.getDataNascimento() + " - CPF: " + a.getCpf() + " - ");
+                sb.append("Email: " + a.getEmail());
+                sb.append(" - Horário Marcado: " + sdfHora.format(a.getHorarioAula()) + "\n");
+                sb.append("\n");
             }
             return sb.toString();
         }

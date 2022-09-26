@@ -121,19 +121,24 @@ public class Program {
         try {
             switch (op) {
                 case 1:
-                    System.out.println("+----------------------------------------------+");
-                    System.out.println("|         *** ESCOLHA UM HORÁRIO ***           |");
-                    System.out.println("+----------------------------------------------+");
-                    System.out.println("| 1.Boxe                 seg     qua     sex   |");
-                    System.out.println("|    .Horários     ~    09:00 - 15:00 - 19:00  |");
-                    System.out.println("+----------------------------------------------+");
-                    System.out.print("| DIA (dd): ");
-                    aluno.setDiaAula(sdfDia.parse(sc.next()));
-                    System.out.print("| HORÁRIO (HH:mm): ");
-                    aluno.setHorarioAula(sdfHora.parse(sc.next()));
-                    System.out.println("+----------------------------------------------+");
-                    ba.addAluno(aluno);
-                    ba.setAulaBoxe(aluno);
+                    if(ba.isFull()){
+                        escolherHorario(1, aluno);
+                    } else {
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("|         *** ESCOLHA UM HORÁRIO ***           |");
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("| 1.Boxe                 seg     qua     sex   |");
+                        System.out.println("|    .Horários     ~    09:00 - 15:00 - 19:00  |");
+                        System.out.println("+----------------------------------------------+");
+                        System.out.print("| DIA (dd): ");
+                        aluno.setDiaAula(sdfDia.parse(sc.next()));
+                        System.out.print("| HORÁRIO (HH:mm): ");
+                        aluno.setHorarioAula(sdfHora.parse(sc.next()));
+                        System.out.println("+----------------------------------------------+");
+                        ba.addAluno(aluno);
+                        ba.setAulaBoxe(aluno);
+                    }
+                    break;
                 case 2:
                     System.out.println("+----------------------------------------------+");
                     System.out.println("|         *** ESCOLHA UM HORÁRIO ***           |");
@@ -148,6 +153,7 @@ public class Program {
                     System.out.println("+----------------------------------------------+");
                     ha.addAluno(aluno);
                     ha.setAulaHidroginastica(aluno);
+                    break;
                 case 3:
                     System.out.println("+----------------------------------------------+");
                     System.out.println("|         *** ESCOLHA UM HORÁRIO ***           |");
@@ -162,6 +168,7 @@ public class Program {
                     System.out.println("+----------------------------------------------+");
                     sa.addAluno(aluno);
                     sa.setAulaSpinning(aluno);
+                    break;
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());

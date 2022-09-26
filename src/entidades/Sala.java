@@ -10,10 +10,10 @@ public abstract class Sala {
     private String nomeAula;
     protected Gym gym;
     private Profissional profissional;
-    private List<Aluno> alunosList = new ArrayList<>();
-    private List<Aluno> horariosManhaList = new ArrayList<>();
-    private List<Aluno> horariosTardeList = new ArrayList<>();
-    private List<Aluno> horariosNoiteList = new ArrayList<>();
+    protected List<Aluno> alunosList = new ArrayList<>();
+    protected List<Aluno> horariosManhaList = new ArrayList<>();
+    protected List<Aluno> horariosTardeList = new ArrayList<>();
+    protected List<Aluno> horariosNoiteList = new ArrayList<>();
 
     public String getNomeAula() {
         return nomeAula;
