@@ -2,7 +2,6 @@ package entidades;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public abstract class Sala {
@@ -12,9 +11,9 @@ public abstract class Sala {
     protected Gym gym;
     private Profissional profissional;
     private List<Aluno> alunosList = new ArrayList<>();
-    private List<Date> horariosManhaList = new ArrayList<>();
-    private List<Date> horariosTardeList = new ArrayList<>();
-    private List<Date> horariosNoiteList = new ArrayList<>();
+    private List<Aluno> horariosManhaList = new ArrayList<>();
+    private List<Aluno> horariosTardeList = new ArrayList<>();
+    private List<Aluno> horariosNoiteList = new ArrayList<>();
 
     public String getNomeAula() {
         return nomeAula;
@@ -40,13 +39,13 @@ public abstract class Sala {
 
 
     public List<Aluno> getAlunosList() { return alunosList; }
-    public List<Date> getHorariosManhaList() {
+    public List<Aluno> getHorariosManhaList() {
         return horariosManhaList;
     }
-    public List<Date> getHorariosTardeList() {
+    public List<Aluno> getHorariosTardeList() {
         return horariosTardeList;
     }
-    public List<Date> getHorariosNoiteList() {
+    public List<Aluno> getHorariosNoiteList() {
         return horariosNoiteList;
     }
 
@@ -54,13 +53,13 @@ public abstract class Sala {
     public void addAluno(Aluno aluno){
         alunosList.add(aluno);
     }
-    public void addHorarioManha(Date horarioManha){
+    public void addHorarioManha(Aluno horarioManha){
         horariosManhaList.add(horarioManha);
     }
-    public void addHorarioTarde(Date horarioTarde){
+    public void addHorarioTarde(Aluno horarioTarde){
         horariosTardeList.add(horarioTarde);
     }
-    public void addHorarioNoite(Date horarioNoite){
+    public void addHorarioNoite(Aluno horarioNoite){
         horariosNoiteList.add(horarioNoite);
     }
 }

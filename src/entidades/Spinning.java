@@ -3,7 +3,6 @@ package entidades;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Spinning extends Sala {
@@ -23,9 +22,9 @@ public class Spinning extends Sala {
     private Gym gym;
     private Profissional profissional;
     private List<Aluno> alunosList = new ArrayList<>();
-    private List<Date> horariosManhaList = new ArrayList<>();
-    private List<Date> horariosTardeList = new ArrayList<>();
-    private List<Date> horariosNoiteList = new ArrayList<>();
+    private List<Aluno> horariosManhaList = new ArrayList<>();
+    private List<Aluno> horariosTardeList = new ArrayList<>();
+    private List<Aluno> horariosNoiteList = new ArrayList<>();
 
     public Spinning() {
         super();
@@ -45,13 +44,13 @@ public class Spinning extends Sala {
         return alunosList;
     }
     @Override
-    public List<Date> getHorariosManhaList() { return horariosManhaList; }
+    public List<Aluno> getHorariosManhaList() { return horariosManhaList; }
     @Override
-    public List<Date> getHorariosTardeList() {
+    public List<Aluno> getHorariosTardeList() {
         return horariosTardeList;
     }
     @Override
-    public List<Date> getHorariosNoiteList() {
+    public List<Aluno> getHorariosNoiteList() {
         return horariosNoiteList;
     }
     @Override
@@ -59,15 +58,15 @@ public class Spinning extends Sala {
         alunosList.add(aluno);
     }
     @Override
-    public void addHorarioManha(Date horarioManha){
+    public void addHorarioManha(Aluno horarioManha){
         horariosManhaList.add(horarioManha);
     }
     @Override
-    public void addHorarioTarde(Date horarioTarde){
+    public void addHorarioTarde(Aluno horarioTarde){
         horariosTardeList.add(horarioTarde);
     }
     @Override
-    public void addHorarioNoite(Date horarioNoite){
+    public void addHorarioNoite(Aluno horarioNoite){
         horariosNoiteList.add(horarioNoite);
     }
 
@@ -75,7 +74,7 @@ public class Spinning extends Sala {
     public void setAulaSpinning(Aluno aluno) throws Exception {
         if(aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_MANHA_SPINNING))){
             if(horariosManhaList.size() < AULA_MANHA_SIZE){
-                addHorarioManha(aluno.getHorarioAula());
+                addHorarioManha(aluno);
                 throw new Exception(String.format(SUCESSO_MSG_MANHA + horariosManhaList.size() + "/" + AULA_MANHA_SIZE));
             } else {
                 throw new Exception(String.format(ERRO_MSG_MANHA));
@@ -84,7 +83,7 @@ public class Spinning extends Sala {
 
         if(aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_TARDE_SPINNING))){
             if(horariosTardeList.size() < AULA_TARDE_SIZE){
-                addHorarioTarde(aluno.getHorarioAula());
+                addHorarioTarde(aluno);
                 throw new Exception(String.format(SUCESSO_MSG_TARDE + horariosTardeList.size() + "/" + AULA_TARDE_SIZE));
             } else {
                 throw new Exception(String.format(ERRO_MSG_TARDE));
@@ -93,7 +92,7 @@ public class Spinning extends Sala {
 
         if(aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_NOITE_SPINNING))){
             if(horariosNoiteList.size() < AULA_NOITE_SIZE){
-                addHorarioNoite(aluno.getHorarioAula());
+                addHorarioNoite(aluno);
                 throw new Exception(String.format(SUCESSO_MSG_NOITE + horariosNoiteList.size() + "/" + AULA_NOITE_SIZE));
             } else {
                 throw new Exception(String.format(ERRO_MSG_NOITE));

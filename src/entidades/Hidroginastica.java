@@ -2,7 +2,6 @@ package entidades;
 
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Hidroginastica extends Sala {
@@ -19,9 +18,9 @@ public class Hidroginastica extends Sala {
     public static final String ERRO_MSG_TARDE = "Turma tarde cheia, escolha outro Horário!";
     public static final String ERRO_MSG_NOITE = "Turma noite cheia, escolha outro Horário!";
     private List<Aluno> alunosList = new ArrayList<>();
-    private List<Date> horariosManhaList = new ArrayList<>();
-    private List<Date> horariosTardeList = new ArrayList<>();
-    private List<Date> horariosNoiteList = new ArrayList<>();
+    private List<Aluno> horariosManhaList = new ArrayList<>();
+    private List<Aluno> horariosTardeList = new ArrayList<>();
+    private List<Aluno> horariosNoiteList = new ArrayList<>();
 
     public Hidroginastica() {
         super();
@@ -38,17 +37,17 @@ public class Hidroginastica extends Sala {
     }
 
     @Override
-    public List<Date> getHorariosManhaList() {
+    public List<Aluno> getHorariosManhaList() {
         return horariosManhaList;
     }
 
     @Override
-    public List<Date> getHorariosTardeList() {
+    public List<Aluno> getHorariosTardeList() {
         return horariosTardeList;
     }
 
     @Override
-    public List<Date> getHorariosNoiteList() {
+    public List<Aluno> getHorariosNoiteList() {
         return horariosNoiteList;
     }
 
@@ -57,22 +56,22 @@ public class Hidroginastica extends Sala {
         alunosList.add(aluno);
     }
     @Override
-    public void addHorarioManha(Date horarioManha){
+    public void addHorarioManha(Aluno horarioManha){
         horariosManhaList.add(horarioManha);
     }
     @Override
-    public void addHorarioTarde(Date horarioTarde){
+    public void addHorarioTarde(Aluno horarioTarde){
         horariosTardeList.add(horarioTarde);
     }
     @Override
-    public void addHorarioNoite(Date horarioNoite){
+    public void addHorarioNoite(Aluno horarioNoite){
         horariosNoiteList.add(horarioNoite);
     }
 
     public void setAulaHidroginastica(Aluno aluno) throws Exception {
         if(aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_MANHA_HIDROGINASTICA))){
             if(horariosManhaList.size() < AULA_MANHA_SIZE){
-                addHorarioManha(aluno.getHorarioAula());
+                addHorarioManha(aluno);
                 throw new Exception(String.format(SUCESSO_MSG_MANHA + horariosManhaList.size() + "/" + AULA_MANHA_SIZE));
             } else {
                 throw new Exception(String.format(ERRO_MSG_MANHA));
@@ -81,7 +80,7 @@ public class Hidroginastica extends Sala {
 
         if(aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_TARDE_HIDROGINASTICA))){
             if(horariosTardeList.size() < AULA_TARDE_SIZE){
-                addHorarioTarde(aluno.getHorarioAula());
+                addHorarioTarde(aluno);
                 throw new Exception(String.format(SUCESSO_MSG_TARDE + horariosTardeList.size() + "/" + AULA_TARDE_SIZE));
             } else {
                 throw new Exception(String.format(ERRO_MSG_TARDE));
@@ -90,7 +89,7 @@ public class Hidroginastica extends Sala {
 
         if(aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_NOITE_HIDROGINASTICA))){
             if(horariosNoiteList.size() < AULA_NOITE_SIZE){
-                addHorarioNoite(aluno.getHorarioAula());
+                addHorarioNoite(aluno);
                 throw new Exception(String.format(SUCESSO_MSG_NOITE + horariosNoiteList.size() + "/" + AULA_NOITE_SIZE));
             } else {
                 throw new Exception(String.format(ERRO_MSG_NOITE));
