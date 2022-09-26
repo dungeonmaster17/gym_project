@@ -52,32 +52,55 @@ public class Gym {
         this.endereco = endereco;
     }
 
-    public BoxeGymService getGymService() {
+    public BoxeGymService getBoxeGymService() {
         return boxeGymService;
     }
 
-    public void setGymService(BoxeGymService boxeGymService) {
+    public void setBoxeGymService(BoxeGymService boxeGymService) {
         this.boxeGymService = boxeGymService;
     }
-    public Boxe getBoxeSala() {
+
+    public HidroginasticaGymService getHidroginasticaGymService() {
+        return hidroginasticaGymService;
+    }
+
+    public void setHidroginasticaGymService(HidroginasticaGymService hidroginasticaGymService) {
+        this.hidroginasticaGymService = hidroginasticaGymService;
+    }
+
+    public SpinningGymService getSpinningGymService() {
+        return spinningGymService;
+    }
+
+    public void setSpinningGymService(SpinningGymService spinningGymService) {
+        this.spinningGymService = spinningGymService;
+    }
+
+    public Boxe getBoxeAula() {
         return boxeAula;
     }
 
-    public void setBoxeSala(Boxe boxeAula) {
+    public void setBoxeAula(Boxe boxeAula) {
         this.boxeAula = boxeAula;
     }
-    public Hidroginastica getHidroginasticaSala() { return hidroginasticaAula; }
 
-    public void setHidroginasticaSala(Hidroginastica hidroginasticaAula) { this.hidroginasticaAula = hidroginasticaAula; }
-    public Spinning getSpinningSala() {
+    public Hidroginastica getHidroginasticaAula() {
+        return hidroginasticaAula;
+    }
+
+    public void setHidroginasticaAula(Hidroginastica hidroginasticaAula) {
+        this.hidroginasticaAula = hidroginasticaAula;
+    }
+
+    public Spinning getSpinningAula() {
         return spinningAula;
     }
 
-    public void setSpinningSala(Spinning spinningAula) {
+    public void setSpinningAula(Spinning spinningAula) {
         this.spinningAula = spinningAula;
     }
 
-    public List<Profissional> getProfissionais() {
+    public List<Profissional> getProfissionaisList() {
         return profissionaisList;
     }
 

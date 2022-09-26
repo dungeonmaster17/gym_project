@@ -386,48 +386,48 @@ public class Program {
             case 1:
                 switch (opFinL) {
                     case 'a':
-                        System.out.println("Valor a receber: R$ " + String.format("%.2f", bfs.getValorTotalAulaBoxeByManha(ba)));
+                        System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getBoxeGymService().getValorTotalAulaBoxeByManha(ba)));
                         break;
                     case 'b':
-                        System.out.println("Valor a receber: R$ " + String.format("%.2f", bfs.getValorTotalAulaBoxeByTarde(ba)));
+                        System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getBoxeGymService().getValorTotalAulaBoxeByTarde(ba)));
                         break;
                     case 'c':
-                        System.out.println("Valor a receber: R$ " + String.format("%.2f", bfs.getValorTotalAulaBoxeByNoite(ba)));
+                        System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getBoxeGymService().getValorTotalAulaBoxeByNoite(ba)));
                         break;
                     case 'd':
-                        System.out.println("Valor a receber: R$ " + String.format("%.2f", bfs.getValorTotalAulaBoxeByDay(ba)));
+                        System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getBoxeGymService().getValorTotalAulaBoxeByDay(ba)));
                         break;
                 }
                 break;
             case 2:
                 switch (opFinL) {
                     case 'a':
-                        System.out.println("Valor a receber: R$ " + String.format("%.2f", hfs.getValorTotalAulaHidroginasticaByManha(ha)));
+                        System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getHidroginasticaGymService().getValorTotalAulaHidroginasticaByManha(ha)));
                         break;
                     case 'b':
-                        System.out.println("Valor a receber: R$ " + String.format("%.2f", hfs.getValorTotalAulaHidroginasticaByTarde(ha)));
+                        System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getHidroginasticaGymService().getValorTotalAulaHidroginasticaByTarde(ha)));
                         break;
                     case 'c':
-                        System.out.println("Valor a receber: R$ " + String.format("%.2f", hfs.getValorTotalAulaHidroginasticaByNoite(ha)));
+                        System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getHidroginasticaGymService().getValorTotalAulaHidroginasticaByNoite(ha)));
                         break;
                     case 'd':
-                        System.out.println("Valor a receber: R$ " + String.format("%.2f", hfs.getValorTotalAulaHidroginasticaByDay(ha)));
+                        System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getHidroginasticaGymService().getValorTotalAulaHidroginasticaByDay(ha)));
                         break;
                 }
                 break;
             case 3:
                 switch (opFinL) {
                     case 'a':
-                        System.out.println("Valor a receber: R$ " + String.format("%.2f", sfs.getValorTotalAulaSpinningByManha(sa)));
+                        System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getSpinningGymService().getValorTotalAulaSpinningByManha(sa)));
                         break;
                     case 'b':
-                        System.out.println("Valor a receber: R$ " + String.format("%.2f", sfs.getValorTotalAulaSpinningByTarde(sa)));
+                        System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getSpinningGymService().getValorTotalAulaSpinningByTarde(sa)));
                         break;
                     case 'c':
-                        System.out.println("Valor a receber: R$ " + String.format("%.2f", sfs.getValorTotalAulaSpinningByNoite(sa)));
+                        System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getSpinningGymService().getValorTotalAulaSpinningByNoite(sa)));
                         break;
                     case 'd':
-                        System.out.println("Valor a receber: R$ " + String.format("%.2f", sfs.getValorTotalAulaSpinningByDay(sa)));
+                        System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getSpinningGymService().getValorTotalAulaSpinningByDay(sa)));
                         break;
                 }
                 break;
