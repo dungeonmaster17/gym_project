@@ -1,6 +1,8 @@
 package services;
 
 import entidades.Gym;
+import entidades.Hidroginastica;
+import entidades.Spinning;
 import interfaces.SpinningGymService;
 
 public class SpinningFinanceiroService implements SpinningGymService {
@@ -17,35 +19,19 @@ public class SpinningFinanceiroService implements SpinningGymService {
     }
 
     @Override
-    public Double calcValorAulaSpinningManha(){
+    public Double getValorTotalAulaSpinningByManha(Spinning spinning){
         return gym.getSpinningSala().getHorariosManhaList().size() * VALOR_HORA_AULA_SPINNING_MANHA;
     }
     @Override
-    public Double calcValorAulaSpinningTarde(){
+    public Double getValorTotalAulaSpinningByTarde(Spinning spinning){
         return gym.getSpinningSala().getHorariosTardeList().size() * VALOR_HORA_AULA_SPINNING_TARDE;
     }
     @Override
-    public Double calcValorAulaSpinningNoite(){
+    public Double getValorTotalAulaSpinningByNoite(Spinning spinning){
         return gym.getSpinningSala().getHorariosNoiteList().size() * VALOR_HORA_AULA_SPINNING_NOITE;
     }
     @Override
-    public Double calcValorTotalAulaSpinning(){
-        return calcValorAulaSpinningManha() + calcValorAulaSpinningTarde() + calcValorAulaSpinningNoite();
-    }
-    @Override
-    public String getValorTotalAulaSpinningByManha(){
-        return "Valor Total a Receber: R$ " + String.format("%.2f", calcValorAulaSpinningManha());
-    }
-    @Override
-    public String getValorTotalAulaSpinningByTarde(){
-        return "Valor Total a Receber: R$ " + String.format("%.2f", calcValorAulaSpinningTarde());
-    }
-    @Override
-    public String getValorTotalAulaSpinningByNoite(){
-        return "Valor Total a Receber: R$ " + String.format("%.2f", calcValorAulaSpinningNoite());
-    }
-    @Override
-    public String getValorTotalAulaSpinningByDay(){
-        return "Valor Total a Receber: R$ " + String.format("%.2f", calcValorTotalAulaSpinning());
+    public Double getValorTotalAulaSpinningByDay(Spinning spinning) {
+        return getValorTotalAulaSpinningByManha(spinning) + getValorTotalAulaSpinningByTarde(spinning) + getValorTotalAulaSpinningByNoite(spinning);
     }
 }

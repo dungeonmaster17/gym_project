@@ -1,8 +1,4 @@
-package salas;
-
-import entidades.Aluno;
-import entidades.Gym;
-import entidades.Profissional;
+package entidades;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

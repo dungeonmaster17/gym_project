@@ -1,20 +1,14 @@
 package interfaces;
 
+import entidades.Boxe;
+
 public interface BoxeGymService {
 
-    Double calcValorAulaBoxeManha();
+    Double getValorTotalAulaBoxeByManha(Boxe boxe);
 
-    Double calcValorAulaBoxeTarde();
+    Double getValorTotalAulaBoxeByTarde(Boxe boxe);
 
-    Double calcValorAulaBoxeNoite();
+    Double getValorTotalAulaBoxeByNoite(Boxe boxe);
 
-    Double calcValorTotalAulaBoxe();
-
-    String getValorTotalAulaBoxeByManha();
-
-    String getValorTotalAulaBoxeByTarde();
-
-    String getValorTotalAulaBoxeByNoite();
-
-    String getValorTotalAulaBoxeByDay();
+    Double getValorTotalAulaBoxeByDay(Boxe boxe);
 }

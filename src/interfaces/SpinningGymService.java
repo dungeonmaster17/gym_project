@@ -1,19 +1,14 @@
 package interfaces;
 
+import entidades.Spinning;
+
 public interface SpinningGymService {
-    public Double calcValorAulaSpinningManha();
 
-    public Double calcValorAulaSpinningTarde();
+    Double getValorTotalAulaSpinningByManha(Spinning spinning);
 
-    public Double calcValorAulaSpinningNoite();
+    Double getValorTotalAulaSpinningByTarde(Spinning spinning);
 
-    public Double calcValorTotalAulaSpinning();
+    Double getValorTotalAulaSpinningByNoite(Spinning spinning);
 
-    public String getValorTotalAulaSpinningByManha();
-
-    public String getValorTotalAulaSpinningByTarde();
-
-    public String getValorTotalAulaSpinningByNoite();
-
-    public String getValorTotalAulaSpinningByDay();
+    Double getValorTotalAulaSpinningByDay(Spinning spinning);
 }

@@ -1,8 +1,4 @@
-package salas;
-
-import entidades.Aluno;
-import entidades.Gym;
-import entidades.Profissional;
+package entidades;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -10,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class SpinningAula extends Sala {
+public class Spinning extends Sala {
     public static final int AULA_NOITE_SIZE = 25;
     public static final int AULA_TARDE_SIZE = 25;
     public static final int AULA_MANHA_SIZE = 25;
@@ -31,11 +27,11 @@ public class SpinningAula extends Sala {
     private List<Date> horariosTardeList = new ArrayList<>();
     private List<Date> horariosNoiteList = new ArrayList<>();
 
-    public SpinningAula() {
+    public Spinning() {
         super();
     }
 
-    public SpinningAula(Gym gym) {
+    public Spinning(Gym gym) {
         super();
         this.gym = gym;
     }

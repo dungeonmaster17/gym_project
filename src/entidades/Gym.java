@@ -2,9 +2,6 @@ package entidades;
 
 import interfaces.HidroginasticaGymService;
 import interfaces.SpinningGymService;
-import salas.BoxeAula;
-import salas.HidroginasticaAula;
-import salas.SpinningAula;
 import interfaces.BoxeGymService;
 
 import java.util.ArrayList;
@@ -17,20 +14,20 @@ public class Gym {
     private BoxeGymService boxeGymService;
     private HidroginasticaGymService hidroginasticaGymService;
     private SpinningGymService spinningGymService;
-    private BoxeAula boxeAula;
-    private HidroginasticaAula hidroginasticaAula;
-    private SpinningAula spinningAula;
+    private Boxe boxeAula;
+    private Hidroginastica hidroginasticaAula;
+    private Spinning spinningAula;
 
     public Gym() {
     }
 
-    public Gym(BoxeAula boxeAula, HidroginasticaAula hidroginasticaAula, SpinningAula spinningAula) {
+    public Gym(Boxe boxeAula, Hidroginastica hidroginasticaAula, Spinning spinningAula) {
         this.boxeAula = boxeAula;
         this.hidroginasticaAula = hidroginasticaAula;
         this.spinningAula = spinningAula;
     }
 
-    public Gym(BoxeGymService boxeGymService, HidroginasticaGymService hidroginasticaGymService, SpinningGymService spinningGymService, BoxeAula boxeAula, HidroginasticaAula hidroginasticaAula, SpinningAula spinningAula) {
+    public Gym(BoxeGymService boxeGymService, HidroginasticaGymService hidroginasticaGymService, SpinningGymService spinningGymService, Boxe boxeAula, Hidroginastica hidroginasticaAula, Spinning spinningAula) {
         this.boxeGymService = boxeGymService;
         this.hidroginasticaGymService = hidroginasticaGymService;
         this.spinningGymService = spinningGymService;
@@ -63,21 +60,21 @@ public class Gym {
     public void setGymService(BoxeGymService boxeGymService) {
         this.boxeGymService = boxeGymService;
     }
-    public BoxeAula getBoxeSala() {
+    public Boxe getBoxeSala() {
         return boxeAula;
     }
 
-    public void setBoxeSala(BoxeAula boxeAula) {
+    public void setBoxeSala(Boxe boxeAula) {
         this.boxeAula = boxeAula;
     }
-    public HidroginasticaAula getHidroginasticaSala() { return hidroginasticaAula; }
+    public Hidroginastica getHidroginasticaSala() { return hidroginasticaAula; }
 
-    public void setHidroginasticaSala(HidroginasticaAula hidroginasticaAula) { this.hidroginasticaAula = hidroginasticaAula; }
-    public SpinningAula getSpinningSala() {
+    public void setHidroginasticaSala(Hidroginastica hidroginasticaAula) { this.hidroginasticaAula = hidroginasticaAula; }
+    public Spinning getSpinningSala() {
         return spinningAula;
     }
 
-    public void setSpinningSala(SpinningAula spinningAula) {
+    public void setSpinningSala(Spinning spinningAula) {
         this.spinningAula = spinningAula;
     }
 

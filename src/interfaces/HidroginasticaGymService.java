@@ -1,20 +1,14 @@
 package interfaces;
 
+import entidades.Hidroginastica;
+
 public interface HidroginasticaGymService {
-    public Double calcValorAulaHidroginasticaManha();
 
-    public Double calcValorAulaHidroginasticaTarde();
+    Double getValorTotalAulaHidroginasticaByManha(Hidroginastica hidroginastica);
 
+    Double getValorTotalAulaHidroginasticaByTarde(Hidroginastica hidroginastica);
 
-    public Double calcValorAulaHidroginasticaNoite();
+    Double getValorTotalAulaHidroginasticaByNoite(Hidroginastica hidroginastica);
 
-    public Double calcValorTotalAulaHidroginastica();
-
-    public String getValorTotalAulaHidroginasticaByManha();
-
-    public String getValorTotalAulaHidroginasticaByTarde();
-
-    public String getValorTotalAulaHidroginasticaByNoite();
-
-    public String getValorTotalAulaHidroginasticaByDay();
+    Double getValorTotalAulaHidroginasticaByDay(Hidroginastica hidroginastica);
 }

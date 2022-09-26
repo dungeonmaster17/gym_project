@@ -3,9 +3,9 @@ package app;
 import entidades.Aluno;
 import entidades.Gym;
 import entidades.Profissional;
-import salas.BoxeAula;
-import salas.HidroginasticaAula;
-import salas.SpinningAula;
+import entidades.Boxe;
+import entidades.Hidroginastica;
+import entidades.Spinning;
 import services.BoxeFinanceiroServiceBoxe;
 import services.HidroginasticaFinanceiroService;
 import services.SpinningFinanceiroService;
@@ -18,14 +18,13 @@ public class Program {
     static SimpleDateFormat sdfHora = new SimpleDateFormat("HH:mm");
     static SimpleDateFormat sdfDia = new SimpleDateFormat("dd");
     static Scanner sc = new Scanner(System.in);
-    static BoxeAula ba = new BoxeAula();
-    static HidroginasticaAula ha = new HidroginasticaAula();
-    static SpinningAula sa = new SpinningAula();
-    static Gym gym = new Gym(ba, ha, sa);
-    //instanciar 2 tipos de servico dentro de gym
-    static BoxeFinanceiroServiceBoxe bfs = new BoxeFinanceiroServiceBoxe(gym);
-    static HidroginasticaFinanceiroService hfs = new HidroginasticaFinanceiroService(gym);
-    static SpinningFinanceiroService sfs = new SpinningFinanceiroService(gym);
+    static Boxe ba = new Boxe();
+    static Hidroginastica ha = new Hidroginastica();
+    static Spinning sa = new Spinning();
+    static BoxeFinanceiroServiceBoxe bfs = new BoxeFinanceiroServiceBoxe();
+    static HidroginasticaFinanceiroService hfs = new HidroginasticaFinanceiroService();
+    static SpinningFinanceiroService sfs = new SpinningFinanceiroService();
+    static Gym gym = new Gym(bfs, hfs, sfs, ba, ha, sa);
 
     public static void main(String[] args) {
         ba.setGym(gym);
@@ -70,7 +69,7 @@ public class Program {
                         cadastrarProfissional(profissional);
                         break;
                     case 6:
-                        financeiro(bfs, hfs, sfs);
+                        financeiro();
                         break;
                     case 7:
                         System.out.println("+----------------------------------------------+");
@@ -353,7 +352,7 @@ public class Program {
         System.out.println("************************************************");
     }
 
-    public static void financeiro(BoxeFinanceiroServiceBoxe bfs, HidroginasticaFinanceiroService hfs, SpinningFinanceiroService sfs) {
+    public static void financeiro() {
         System.out.println("+----------------------------------------------+");
         System.out.println("|       *** RELATORIO DE PAGAMENTOS ***        |");
         System.out.println("+----------------------------------------------+");
@@ -384,48 +383,48 @@ public class Program {
             case 1:
                 switch (opFinL) {
                     case 'a':
-                        System.out.println(bfs.getValorTotalAulaBoxeByManha());
+                        System.out.println("Valor a receber: R$ " + String.format("%.2f", bfs.getValorTotalAulaBoxeByManha(ba)));
                         break;
                     case 'b':
-                        System.out.println(bfs.getValorTotalAulaBoxeByTarde());
+                        System.out.println("Valor a receber: R$ " + String.format("%.2f", bfs.getValorTotalAulaBoxeByTarde(ba)));
                         break;
                     case 'c':
-                        System.out.println(bfs.getValorTotalAulaBoxeByNoite());
+                        System.out.println("Valor a receber: R$ " + String.format("%.2f", bfs.getValorTotalAulaBoxeByNoite(ba)));
                         break;
                     case 'd':
-                        System.out.println(bfs.getValorTotalAulaBoxeByDay());
+                        System.out.println("Valor a receber: R$ " + String.format("%.2f", bfs.getValorTotalAulaBoxeByDay(ba)));
                         break;
                 }
                 break;
             case 2:
                 switch (opFinL) {
                     case 'a':
-                        System.out.println(hfs.getValorTotalAulaHidroginasticaByManha());
+                        System.out.println("Valor a receber: R$ " + String.format("%.2f", hfs.getValorTotalAulaHidroginasticaByManha(ha)));
                         break;
                     case 'b':
-                        System.out.println(hfs.getValorTotalAulaHidroginasticaByTarde());
+                        System.out.println("Valor a receber: R$ " + String.format("%.2f", hfs.getValorTotalAulaHidroginasticaByTarde(ha)));
                         break;
                     case 'c':
-                        System.out.println(hfs.getValorTotalAulaHidroginasticaByNoite());
+                        System.out.println("Valor a receber: R$ " + String.format("%.2f", hfs.getValorTotalAulaHidroginasticaByNoite(ha)));
                         break;
                     case 'd':
-                        System.out.println(hfs.getValorTotalAulaHidroginasticaByDay());
+                        System.out.println("Valor a receber: R$ " + String.format("%.2f", hfs.getValorTotalAulaHidroginasticaByDay(ha)));
                         break;
                 }
                 break;
             case 3:
                 switch (opFinL) {
                     case 'a':
-                        System.out.println(sfs.getValorTotalAulaSpinningByManha());
+                        System.out.println("Valor a receber: R$ " + String.format("%.2f", sfs.getValorTotalAulaSpinningByManha(sa)));
                         break;
                     case 'b':
-                        System.out.println(sfs.getValorTotalAulaSpinningByTarde());
+                        System.out.println("Valor a receber: R$ " + String.format("%.2f", sfs.getValorTotalAulaSpinningByTarde(sa)));
                         break;
                     case 'c':
-                        System.out.println(sfs.getValorTotalAulaSpinningByNoite());
+                        System.out.println("Valor a receber: R$ " + String.format("%.2f", sfs.getValorTotalAulaSpinningByNoite(sa)));
                         break;
                     case 'd':
-                        System.out.println(sfs.getValorTotalAulaSpinningByDay());
+                        System.out.println("Valor a receber: R$ " + String.format("%.2f", sfs.getValorTotalAulaSpinningByDay(sa)));
                         break;
                 }
                 break;

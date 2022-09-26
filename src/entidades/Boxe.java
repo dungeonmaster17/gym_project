@@ -1,14 +1,11 @@
-package salas;
-
-import entidades.Aluno;
-import entidades.Gym;
+package entidades;
 
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class BoxeAula extends Sala {
+public class Boxe extends Sala {
     public static final int AULA_MANHA_SIZE = 2;
     public static final int AULA_TARDE_SIZE = 2;
     public static final int AULA_NOITE_SIZE = 5;
@@ -27,17 +24,14 @@ public class BoxeAula extends Sala {
     private List<Date> horariosTardeList = new ArrayList<>();
     private List<Date> horariosNoiteList = new ArrayList<>();
 
-    public BoxeAula() {
+    public Boxe() {
         super();
     }
 
-
-    public BoxeAula(Gym gym) {
+    public Boxe(Gym gym) {
         super();
         this.gym = gym;
     }
-
-
 
     @Override
     public List<Aluno> getAlunosList() {
