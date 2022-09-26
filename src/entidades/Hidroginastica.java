@@ -109,6 +109,9 @@ public class Hidroginastica extends Sala {
     }
 
     public String findProfissionalHidroginastica() {
+        if(getProfissional().getNome() == null){
+            return " *** Sem profissional cadastrado para aulas de Hidroginastica. ***";
+        }
         return " *** Aula Hidroginastica ***\n Professor(a): " + getProfissional().getNome();
     }
 

@@ -112,6 +112,9 @@ public class Spinning extends Sala {
     }
 
     public String findProfissionalSpinning() {
+        if(getProfissional().getNome() == null){
+            return " *** Sem profissional cadastrado para aulas de Spinning. ***";
+        }
         return " *** Aula Spinning ***\n Professor(a): " + getProfissional().getNome();
     }
 
