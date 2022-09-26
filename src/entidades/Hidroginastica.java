@@ -14,9 +14,9 @@ public class Hidroginastica extends Sala {
     public static final String SUCESSO_MSG_MANHA = "| Horário marcado com SUCESSO!\n| Turma manhã vagas Restantes: ";
     public static final String SUCESSO_MSG_TARDE = "| Horário marcado com SUCESSO!\n| Turma tarde vagas Restantes: ";
     public static final String SUCESSO_MSG_NOITE = "| Horário marcado com SUCESSO!\n| Turma noite vagas Restantes: ";
-    public static final String ERRO_MSG_MANHA = "Turma manhã cheia, escolha outro Horário!";
-    public static final String ERRO_MSG_TARDE = "Turma tarde cheia, escolha outro Horário!";
-    public static final String ERRO_MSG_NOITE = "Turma noite cheia, escolha outro Horário!";
+    public static final String ERRO_MSG_MANHA = "| Turma manhã CHEIA, escolha outro Horário!";
+    public static final String ERRO_MSG_TARDE = "| Turma tarde CHEIA, escolha outro Horário!";
+    public static final String ERRO_MSG_NOITE = "| Turma noite CHEIA, escolha outro Horário!";
     private List<Aluno> alunosList = new ArrayList<>();
     private List<Aluno> horariosManhaList = new ArrayList<>();
     private List<Aluno> horariosTardeList = new ArrayList<>();
