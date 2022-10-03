@@ -55,18 +55,18 @@ public class Spinning extends Sala {
     }
 
     @Override
-    public void addHorarioManha(Aluno horarioManha) {
-        horariosManhaList.add(horarioManha);
+    public void addHorarioManha(Aluno aluno) {
+        horariosManhaList.add(aluno);
     }
 
     @Override
-    public void addHorarioTarde(Aluno horarioTarde) {
-        horariosTardeList.add(horarioTarde);
+    public void addHorarioTarde(Aluno aluno) {
+        horariosTardeList.add(aluno);
     }
 
     @Override
-    public void addHorarioNoite(Aluno horarioNoite) {
-        horariosNoiteList.add(horarioNoite);
+    public void addHorarioNoite(Aluno aluno) {
+        horariosNoiteList.add(aluno);
     }
 
     @Override

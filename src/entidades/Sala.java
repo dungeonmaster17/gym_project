@@ -15,6 +15,11 @@ public abstract class Sala {
     protected List<Aluno> horariosTardeList = new ArrayList<>();
     protected List<Aluno> horariosNoiteList = new ArrayList<>();
 
+    protected List<Aluno> horariosQuartaList = new ArrayList<>();
+    protected List<Aluno> horariosSextaList = new ArrayList<>();
+    protected List<Aluno> horariosSabadoList = new ArrayList<>();
+
+
     public String getNomeAula() {
         return nomeAula;
     }
@@ -49,18 +54,39 @@ public abstract class Sala {
         return horariosNoiteList;
     }
 
+    public List<Aluno> getHorariosQuartaList() {
+        return horariosQuartaList;
+    }
+
+    public List<Aluno> getHorariosSextaList() {
+        return horariosSextaList;
+    }
+
+    public List<Aluno> getHorariosSabadoList() {
+        return horariosSabadoList;
+    }
 
     public void addAluno(Aluno aluno){
         alunosList.add(aluno);
     }
-    public void addHorarioManha(Aluno horarioManha){
-        horariosManhaList.add(horarioManha);
+    public void addHorarioManha(Aluno aluno){
+        horariosManhaList.add(aluno);
     }
-    public void addHorarioTarde(Aluno horarioTarde){
-        horariosTardeList.add(horarioTarde);
+    public void addHorarioTarde(Aluno aluno){
+        horariosTardeList.add(aluno);
     }
-    public void addHorarioNoite(Aluno horarioNoite){
-        horariosNoiteList.add(horarioNoite);
+    public void addHorarioNoite(Aluno aluno){
+        horariosNoiteList.add(aluno);
+    }
+
+    public void addHorarioQuarta(Aluno aluno){
+        horariosQuartaList.add(aluno);
+    }
+    public void addHorarioSexta(Aluno aluno){
+        horariosSextaList.add(aluno);
+    }
+    public void addHorarioSabado(Aluno aluno){
+        horariosSabadoList.add(aluno);
     }
 
     public abstract boolean isFull(Aluno aluno) throws Exception;

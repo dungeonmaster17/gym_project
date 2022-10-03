@@ -1,7 +1,7 @@
 package services;
 
 import entidades.Spinning;
-import interfaces.SpinningGymService;
+import services.interfaces.SpinningGymService;
 
 public class SpinningFinanceiroService implements SpinningGymService {
     public static final double VALOR_HORA_AULA_SPINNING_MANHA = 70.00;

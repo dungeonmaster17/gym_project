@@ -1,7 +1,7 @@
 package services;
 
 import entidades.Hidroginastica;
-import interfaces.HidroginasticaGymService;
+import services.interfaces.HidroginasticaGymService;
 
 public class HidroginasticaFinanceiroService implements HidroginasticaGymService {
     public static final double VALOR_HORA_AULA_HIDROGINASTICA_MANHA = 150.00;

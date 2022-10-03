@@ -1,8 +1,8 @@
 package entidades;
 
-import interfaces.HidroginasticaGymService;
-import interfaces.SpinningGymService;
-import interfaces.BoxeGymService;
+import services.interfaces.HidroginasticaGymService;
+import services.interfaces.SpinningGymService;
+import services.interfaces.BoxeGymService;
 
 import java.util.ArrayList;
 import java.util.List;

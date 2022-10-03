@@ -1,7 +1,7 @@
 package services;
 
 import entidades.Boxe;
-import interfaces.BoxeGymService;
+import services.interfaces.BoxeGymService;
 
 public class BoxeFinanceiroService implements BoxeGymService {
     public static final double VALOR_HORA_AULA_BOXE_MANHA = 120.00;

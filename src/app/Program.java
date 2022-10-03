@@ -14,7 +14,7 @@ public class Program {
     static Date dateNow = new Date();
     static SimpleDateFormat sdfNow = new SimpleDateFormat("dd/MM HH:mm");
     static SimpleDateFormat sdfHora = new SimpleDateFormat("HH:mm");
-    static SimpleDateFormat sdfDia = new SimpleDateFormat("dd/MM");
+    static SimpleDateFormat sdfDia = new SimpleDateFormat("dd");
     static Scanner sc = new Scanner(System.in);
     static Boxe ba = new Boxe();
     static Hidroginastica ha = new Hidroginastica();
@@ -23,6 +23,7 @@ public class Program {
     static HidroginasticaFinanceiroService hfs = new HidroginasticaFinanceiroService();
     static SpinningFinanceiroService sfs = new SpinningFinanceiroService();
     static Gym gym = new Gym(bfs, hfs, sfs, ba, ha, sa);
+
     public static void main(String[] args) {
         boolean loop = true;
         while (loop) {
@@ -82,6 +83,7 @@ public class Program {
             }
         }
     }
+
 
     public static void aulasHorarios() {
         System.out.println("+----------------------------------------------+");

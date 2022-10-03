@@ -1,4 +1,4 @@
-package interfaces;
+package services.interfaces;
 
 import entidades.Hidroginastica;
 
