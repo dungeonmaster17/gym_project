@@ -124,7 +124,7 @@ public class Program {
                     System.out.println("| 1.Boxe                 qua     sex     sab   |");
                     System.out.println("|    .Horários     ~    09:00 - 15:00 - 19:00  |");
                     System.out.println("+----------------------------------------------+");
-                    System.out.print("| DIA (qua/qui/sab): ");
+                    System.out.print("| DIA (qua/sex/sab): ");
                     aluno.setDiaAula(sc.next());
                     System.out.print("| HORÁRIO (HH:mm): ");
                     aluno.setHorarioAula(sdfHora.parse(sc.next()));
@@ -144,7 +144,7 @@ public class Program {
                     System.out.println("| 2.Hidroginastica       qua     sex     sab   |");
                     System.out.println("|    .Horários     ~    09:00 - 15:00 - 19:00  |");
                     System.out.println("+----------------------------------------------+");
-                    System.out.print("| DIA (qua/qui/sab): ");
+                    System.out.print("| DIA (qua/sex/sab): ");
                     aluno.setDiaAula(sc.next());
                     System.out.print("| HORÁRIO (HH:mm): ");
                     aluno.setHorarioAula(sdfHora.parse(sc.next()));
@@ -153,7 +153,7 @@ public class Program {
                         escolherHorario(2, aluno);
                     }
                     ha.addAluno(aluno);
-                    ha.setAulaHidroginastica(aluno);
+                    ha.setHorarioAulaHidroginastica(aluno);
                     break;
                 case 3:
                     System.out.println("+----------------------------------------------+");
@@ -162,7 +162,7 @@ public class Program {
                     System.out.println("| 3.Spinning             qua     sex     sab   |");
                     System.out.println("|    .Horários     ~    09:00 - 15:00 - 19:00  |");
                     System.out.println("+----------------------------------------------+");
-                    System.out.print("| DIA (qua/qui/sab): ");
+                    System.out.print("| DIA (qua/sex/sab): ");
                     aluno.setDiaAula(sc.next());
                     System.out.print("| HORÁRIO (HH:mm): ");
                     aluno.setHorarioAula(sdfHora.parse(sc.next()));
@@ -171,7 +171,7 @@ public class Program {
                         escolherHorario(3, aluno);
                     }
                     sa.addAluno(aluno);
-                    sa.setAulaSpinning(aluno);
+                    sa.setHorarioAulaSpinning(aluno);
                     break;
             }
         } catch (Exception e) {

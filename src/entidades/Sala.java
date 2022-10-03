@@ -11,14 +11,28 @@ public abstract class Sala {
     private String nomeAula;
     protected Gym gym;
     private Profissional profissional;
+    //lista total de Alunos
     protected List<Aluno> alunosList = new ArrayList<>();
-    protected List<Aluno> horariosManhaList = new ArrayList<>();
-    protected List<Aluno> horariosTardeList = new ArrayList<>();
-    protected List<Aluno> horariosNoiteList = new ArrayList<>();
 
+    //lista dias de Aula
     protected List<Aluno> horariosQuartaList = new ArrayList<>();
     protected List<Aluno> horariosSextaList = new ArrayList<>();
     protected List<Aluno> horariosSabadoList = new ArrayList<>();
+
+    //lista de horarios Quarta-Feira
+    protected List<Aluno> horariosQuartaManhaList = new ArrayList<>();
+    protected List<Aluno> horariosQuartaTardeList = new ArrayList<>();
+    protected List<Aluno> horariosQuartaNoiteList = new ArrayList<>();
+
+    //lista de horarios Sexta-Feira
+    protected List<Aluno> horariosSextaManhaList = new ArrayList<>();
+    protected List<Aluno> horariosSextaTardeList = new ArrayList<>();
+    protected List<Aluno> horariosSextaNoiteList = new ArrayList<>();
+
+    //lista de horarios Sabado
+    protected List<Aluno> horariosSabadoManhaList = new ArrayList<>();
+    protected List<Aluno> horariosSabadoTardeList = new ArrayList<>();
+    protected List<Aluno> horariosSabadoNoiteList = new ArrayList<>();
 
 
     public String getNomeAula() {
@@ -44,51 +58,58 @@ public abstract class Sala {
     }
 
 
-    public List<Aluno> getAlunosList() { return alunosList; }
-    public List<Aluno> getHorariosManhaList() {
-        return horariosManhaList;
-    }
-    public List<Aluno> getHorariosTardeList() {
-        return horariosTardeList;
-    }
-    public List<Aluno> getHorariosNoiteList() {
-        return horariosNoiteList;
-    }
+    public abstract List<Aluno> getAlunosList();
 
-    public List<Aluno> getHorariosQuartaList() {
-        return horariosQuartaList;
-    }
+    public abstract List<Aluno> getHorariosQuartaList();
 
-    public List<Aluno> getHorariosSextaList() {
-        return horariosSextaList;
-    }
+    public abstract List<Aluno> getHorariosSextaList();
 
-    public List<Aluno> getHorariosSabadoList() {
-        return horariosSabadoList;
-    }
+    public abstract List<Aluno> getHorariosSabadoList();
 
-    public void addAluno(Aluno aluno){
-        alunosList.add(aluno);
-    }
-    public void addHorarioManha(Aluno aluno){
-        horariosManhaList.add(aluno);
-    }
-    public void addHorarioTarde(Aluno aluno){
-        horariosTardeList.add(aluno);
-    }
-    public void addHorarioNoite(Aluno aluno){
-        horariosNoiteList.add(aluno);
-    }
+    public abstract List<Aluno> getHorariosQuartaManhaList();
 
-    public void addHorarioQuarta(Aluno aluno){
-        horariosQuartaList.add(aluno);
-    }
-    public void addHorarioSexta(Aluno aluno){
-        horariosSextaList.add(aluno);
-    }
-    public void addHorarioSabado(Aluno aluno){
-        horariosSabadoList.add(aluno);
-    }
+    public abstract List<Aluno> getHorariosQuartaTardeList();
 
+    public abstract List<Aluno> getHorariosQuartaNoiteList();
+
+    public abstract List<Aluno> getHorariosSextaManhaList();
+
+    public abstract List<Aluno> getHorariosSextaTardeList();
+
+    public abstract List<Aluno> getHorariosSextaNoiteList();
+
+    public abstract List<Aluno> getHorariosSabadoManhaList();
+
+    public abstract List<Aluno> getHorariosSabadoTardeList();
+
+    public abstract List<Aluno> getHorariosSabadoNoiteList();
+
+    //add todos os Alunos
+    public abstract void addAluno(Aluno aluno);
+
+    //add dias de Aulas
+    public abstract void addHorarioQuarta(Aluno aluno);
+    public abstract void addHorarioSexta(Aluno aluno);
+    public abstract void addHorarioSabado(Aluno aluno);
+
+    //add horarios de Quarta-Feira
+    public abstract void addHorarioQuartaManha(Aluno aluno);
+    public abstract void addHorarioQuartaTarde(Aluno aluno);
+    public abstract void addHorarioQuartaNoite(Aluno aluno);
+
+    //add horarios de Sexta-Feira
+    public abstract void addHorarioSextaManha(Aluno aluno);
+    public abstract void addHorarioSextaTarde(Aluno aluno);
+    public abstract void addHorarioSextaNoite(Aluno aluno);
+
+    //add horarios de Sabado
+    public abstract void addHorarioSabadoManha(Aluno aluno);
+    public abstract void addHorarioSabadoTarde(Aluno aluno);
+    public abstract void addHorarioSabadoNoite(Aluno aluno);
+
+    //setando aula no dia
+    public abstract void setDiaAulaBoxe(Aluno aluno);
+
+    //verificando se aula esta cheia
     public abstract boolean isFull(Aluno aluno) throws Exception;
 }

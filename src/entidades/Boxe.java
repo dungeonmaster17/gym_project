@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Boxe extends Sala {
-    public static final int AULA_MANHA_SIZE = 1;
+    public static final int AULA_MANHA_SIZE = 5;
     public static final int AULA_TARDE_SIZE = 5;
     public static final int AULA_NOITE_SIZE = 5;
     public static final String HORARIO_MANHA_BOXE = "09:00";
@@ -26,24 +26,10 @@ public class Boxe extends Sala {
         this.gym = gym;
     }
 
+
     @Override
     public List<Aluno> getAlunosList() {
         return alunosList;
-    }
-
-    @Override
-    public List<Aluno> getHorariosManhaList() {
-        return horariosManhaList;
-    }
-
-    @Override
-    public List<Aluno> getHorariosTardeList() {
-        return horariosTardeList;
-    }
-
-    @Override
-    public List<Aluno> getHorariosNoiteList() {
-        return horariosNoiteList;
     }
 
     @Override
@@ -62,23 +48,53 @@ public class Boxe extends Sala {
     }
 
     @Override
+    public List<Aluno> getHorariosQuartaManhaList() {
+        return horariosQuartaManhaList;
+    }
+
+    @Override
+    public List<Aluno> getHorariosQuartaTardeList() {
+        return horariosQuartaTardeList;
+    }
+
+    @Override
+    public List<Aluno> getHorariosQuartaNoiteList() {
+        return horariosQuartaNoiteList;
+    }
+
+    @Override
+    public List<Aluno> getHorariosSextaManhaList() {
+        return horariosSextaManhaList;
+    }
+
+    @Override
+    public List<Aluno> getHorariosSextaTardeList() {
+        return horariosSextaTardeList;
+    }
+
+    @Override
+    public List<Aluno> getHorariosSextaNoiteList() {
+        return horariosSextaNoiteList;
+    }
+
+    @Override
+    public List<Aluno> getHorariosSabadoManhaList() {
+        return horariosSabadoManhaList;
+    }
+
+    @Override
+    public List<Aluno> getHorariosSabadoTardeList() {
+        return horariosSabadoTardeList;
+    }
+
+    @Override
+    public List<Aluno> getHorariosSabadoNoiteList() {
+        return horariosSabadoNoiteList;
+    }
+
+    @Override
     public void addAluno(Aluno aluno) {
         alunosList.add(aluno);
-    }
-
-    @Override
-    public void addHorarioManha(Aluno aluno) {
-        horariosManhaList.add(aluno);
-    }
-
-    @Override
-    public void addHorarioTarde(Aluno aluno) {
-        horariosTardeList.add(aluno);
-    }
-
-    @Override
-    public void addHorarioNoite(Aluno aluno) {
-        horariosNoiteList.add(aluno);
     }
 
     @Override
@@ -97,47 +113,43 @@ public class Boxe extends Sala {
     }
 
     @Override
-    public boolean isFull(Aluno aluno) throws Exception {
-        if (horariosManhaList.size() == AULA_MANHA_SIZE && aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_MANHA_BOXE))) {
-            return true;
-        } else if (horariosTardeList.size() == AULA_TARDE_SIZE && aluno.getHorarioAula().equals(sdfHora.parse((HORARIO_TARDE_BOXE)))) {
-            return true;
-        } else if (horariosNoiteList.size() == AULA_NOITE_SIZE && aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_NOITE_BOXE))) {
-            return true;
-        } else {
-            return false;
-        }
+    public void addHorarioQuartaManha(Aluno aluno){
+        horariosQuartaManhaList.add(aluno);
+    }
+    @Override
+    public void addHorarioQuartaTarde(Aluno aluno){
+        horariosQuartaTardeList.add(aluno);
+    }
+    @Override
+    public void addHorarioQuartaNoite(Aluno aluno){
+        horariosQuartaNoiteList.add(aluno);
+    }
+    @Override
+    public void addHorarioSextaManha(Aluno aluno){
+        horariosSextaManhaList.add(aluno);
+    }
+    @Override
+    public void addHorarioSextaTarde(Aluno aluno){
+        horariosSextaTardeList.add(aluno);
+    }
+    @Override
+    public void addHorarioSextaNoite(Aluno aluno){
+        horariosSextaNoiteList.add(aluno);
+    }
+    @Override
+    public void addHorarioSabadoManha(Aluno aluno){
+        horariosSabadoManhaList.add(aluno);
+    }
+    @Override
+    public void addHorarioSabadoTarde(Aluno aluno){
+        horariosSabadoTardeList.add(aluno);
+    }
+    @Override
+    public void addHorarioSabadoNoite(Aluno aluno){
+        horariosSabadoNoiteList.add(aluno);
     }
 
-    public void setHorarioAulaBoxe(Aluno aluno) throws Exception {
-        if (aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_MANHA_BOXE))) {
-            if (horariosManhaList.size() < AULA_MANHA_SIZE) {
-                addHorarioManha(aluno);
-                throw new Exception(String.format(SUCESS0_MSG_MANHA + horariosManhaList.size() + "/" + AULA_MANHA_SIZE));
-            } else {
-                throw new Exception(String.format(ERRO_MSG_MANHA));
-            }
-        }
-
-        if (aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_TARDE_BOXE))) {
-            if (horariosTardeList.size() < AULA_TARDE_SIZE) {
-                addHorarioTarde(aluno);
-                throw new Exception(String.format(SUCESSO_MSG_TARDE + horariosTardeList.size() + "/" + AULA_TARDE_SIZE));
-            } else {
-                throw new Exception(String.format(ERRO_MSG_TARDE));
-            }
-        }
-
-        if (aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_NOITE_BOXE))) {
-            if (horariosNoiteList.size() < AULA_NOITE_SIZE) {
-                addHorarioNoite(aluno);
-                throw new Exception(String.format(SUCESSO_MSG_NOITE + horariosNoiteList.size() + "/" + AULA_NOITE_SIZE));
-            } else {
-                throw new Exception(String.format(ERRO_MSG_NOITE));
-            }
-        }
-    }
-
+    @Override
     public void setDiaAulaBoxe(Aluno aluno) {
         if (aluno.getDiaAula() == "qua") {
             addHorarioQuarta(aluno);
@@ -148,6 +160,125 @@ public class Boxe extends Sala {
         if (aluno.getDiaAula() == "sab") {
             addHorarioSabado(aluno);
         }
+    }
+
+    @Override
+    public boolean isFull(Aluno aluno) throws Exception {
+        if (horariosQuartaManhaList.size() == AULA_MANHA_SIZE && aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_MANHA_BOXE))) {
+            return true;
+        } else if (horariosQuartaTardeList.size() == AULA_TARDE_SIZE && aluno.getHorarioAula().equals(sdfHora.parse((HORARIO_TARDE_BOXE)))) {
+            return true;
+        } else if (horariosQuartaNoiteList.size() == AULA_NOITE_SIZE && aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_NOITE_BOXE))) {
+            return true;
+        }
+
+        if (horariosSextaManhaList.size() == AULA_MANHA_SIZE && aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_MANHA_BOXE))) {
+            return true;
+        } else if (horariosSextaTardeList.size() == AULA_TARDE_SIZE && aluno.getHorarioAula().equals(sdfHora.parse((HORARIO_TARDE_BOXE)))) {
+            return true;
+        } else if (horariosSextaNoiteList.size() == AULA_NOITE_SIZE && aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_NOITE_BOXE))) {
+            return true;
+        }
+
+        if (horariosSabadoManhaList.size() == AULA_MANHA_SIZE && aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_MANHA_BOXE))) {
+            return true;
+        } else if (horariosSabadoTardeList.size() == AULA_TARDE_SIZE && aluno.getHorarioAula().equals(sdfHora.parse((HORARIO_TARDE_BOXE)))) {
+            return true;
+        } else if (horariosSabadoNoiteList.size() == AULA_NOITE_SIZE && aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_NOITE_BOXE))) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public void setHorarioAulaBoxe(Aluno aluno) throws Exception {
+        if(aluno.getDiaAula().equals("qua")){
+            if (aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_MANHA_BOXE))) {
+                if (horariosQuartaManhaList.size() < AULA_MANHA_SIZE) {
+                    addHorarioQuartaManha(aluno);
+                    throw new Exception(String.format(SUCESS0_MSG_MANHA + horariosQuartaManhaList.size() + "/" + AULA_MANHA_SIZE));
+                } else {
+                    throw new Exception(String.format(ERRO_MSG_MANHA));
+                }
+            }
+
+            if (aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_TARDE_BOXE))) {
+                if (horariosQuartaTardeList.size() < AULA_TARDE_SIZE) {
+                    addHorarioQuartaTarde(aluno);
+                    throw new Exception(String.format(SUCESSO_MSG_TARDE + horariosQuartaTardeList.size() + "/" + AULA_TARDE_SIZE));
+                } else {
+                    throw new Exception(String.format(ERRO_MSG_TARDE));
+                }
+            }
+
+            if (aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_NOITE_BOXE))) {
+                if (horariosQuartaNoiteList.size() < AULA_NOITE_SIZE) {
+                    addHorarioQuartaNoite(aluno);
+                    throw new Exception(String.format(SUCESSO_MSG_NOITE + horariosQuartaNoiteList.size() + "/" + AULA_NOITE_SIZE));
+                } else {
+                    throw new Exception(String.format(ERRO_MSG_NOITE));
+                }
+            }
+        }
+
+        if(aluno.getDiaAula().equals("sex")){
+            if (aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_MANHA_BOXE))) {
+                if (horariosSextaManhaList.size() < AULA_MANHA_SIZE) {
+                    addHorarioSextaManha(aluno);
+                    throw new Exception(String.format(SUCESS0_MSG_MANHA + horariosSextaManhaList.size() + "/" + AULA_MANHA_SIZE));
+                } else {
+                    throw new Exception(String.format(ERRO_MSG_MANHA));
+                }
+            }
+
+            if (aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_TARDE_BOXE))) {
+                if (horariosSextaTardeList.size() < AULA_TARDE_SIZE) {
+                    addHorarioSextaTarde(aluno);
+                    throw new Exception(String.format(SUCESSO_MSG_TARDE + horariosSextaTardeList.size() + "/" + AULA_TARDE_SIZE));
+                } else {
+                    throw new Exception(String.format(ERRO_MSG_TARDE));
+                }
+            }
+
+            if (aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_NOITE_BOXE))) {
+                if (horariosSextaNoiteList.size() < AULA_NOITE_SIZE) {
+                    addHorarioSextaNoite(aluno);
+                    throw new Exception(String.format(SUCESSO_MSG_NOITE + horariosSextaNoiteList.size() + "/" + AULA_NOITE_SIZE));
+                } else {
+                    throw new Exception(String.format(ERRO_MSG_NOITE));
+                }
+            }
+        }
+
+        if(aluno.getDiaAula().equals("sab")){
+            if (aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_MANHA_BOXE))) {
+                if (horariosSabadoManhaList.size() < AULA_MANHA_SIZE) {
+                    addHorarioSabadoManha(aluno);
+                    throw new Exception(String.format(SUCESS0_MSG_MANHA + horariosSabadoManhaList.size() + "/" + AULA_MANHA_SIZE));
+                } else {
+                    throw new Exception(String.format(ERRO_MSG_MANHA));
+                }
+            }
+
+            if (aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_TARDE_BOXE))) {
+                if (horariosSabadoTardeList.size() < AULA_TARDE_SIZE) {
+                    addHorarioSabadoTarde(aluno);
+                    throw new Exception(String.format(SUCESSO_MSG_TARDE + horariosSabadoTardeList.size() + "/" + AULA_TARDE_SIZE));
+                } else {
+                    throw new Exception(String.format(ERRO_MSG_TARDE));
+                }
+            }
+
+            if (aluno.getHorarioAula().equals(sdfHora.parse(HORARIO_NOITE_BOXE))) {
+                if (horariosSabadoNoiteList.size() < AULA_NOITE_SIZE) {
+                    addHorarioSabadoNoite(aluno);
+                    throw new Exception(String.format(SUCESSO_MSG_NOITE + horariosSabadoNoiteList.size() + "/" + AULA_NOITE_SIZE));
+                } else {
+                    throw new Exception(String.format(ERRO_MSG_NOITE));
+                }
+            }
+        }
+
     }
 
     public String findProfissionalBoxe() {
@@ -161,23 +292,21 @@ public class Boxe extends Sala {
         StringBuilder sb = new StringBuilder();
         if (!alunosList.isEmpty()) {
             int indiceAluno = 1;
-            sb.append("                              *** Todos o(s) Aluno(os) Boxe ***\n");
-            sb.append("cod.:" + "  Matricula  " + "   Nome  " + "        Data Nascimento  " + "    CPF " + "           Email  " + "          Horario Marcado\n");
+            sb.append(" *** Todos o(s) Aluno(os) Boxe ***\n");
             for (Aluno a : alunosList) {
-                sb.append(" " + indiceAluno++ + "        ");
-                sb.append(a.getMatricula() + "      ");
-                sb.append(a.getNome() + " " + a.getSobrenome() + "      ");
-                sb.append("  " + a.getDataNascimento() + "      " + a.getCpf() + "      ");
-                sb.append(a.getEmail() + "     ");
-                sb.append("    " + sdfHora.format(a.getHorarioAula()) + "\n");
+                sb.append("cod.: 00" + indiceAluno++ + "\n");
+                sb.append("Matricula: " + a.getMatricula() + " - ");
+                sb.append("Nome: " + a.getNome() + " " + a.getSobrenome() + " - ");
+                sb.append("Data Nasc.: " + a.getDataNascimento() + " - CPF: " + a.getCpf() + " - ");
+                sb.append("Email: " + a.getEmail());
+                sb.append(" - Horário Marcado: " + sdfHora.format(a.getHorarioAula()) + " - ");
                 sb.append("    " + a.getDiaAula() + "\n");
-                sb.append("-----------------------------------------------------------------------------------------------------\n");
+                sb.append("\n");
             }
             return sb.toString();
         }
         return "Sem alunos para a aula selecionada!";
     }
-
 
     public String findAllAlunoBoxeByDayAndHour(String dia, Date hora) {
         StringBuilder sb = new StringBuilder();
