@@ -7,6 +7,7 @@ import java.util.List;
 public abstract class Sala {
 
     protected SimpleDateFormat sdfHora = new SimpleDateFormat("HH:mm");
+    protected SimpleDateFormat sdfDia = new SimpleDateFormat("dd");
     private String nomeAula;
     protected Gym gym;
     private Profissional profissional;

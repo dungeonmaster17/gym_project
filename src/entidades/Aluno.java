@@ -11,13 +11,13 @@ public class Aluno {
     private String email;
     private String cpf;
     private Date horarioAula;
-    private Date diaAula;
+    private String diaAula;
     private Gym gym;
     public Aluno() {
     }
 
     public Aluno(Integer matricula, String nome, String sobrenome, String dataNascimento, String email, String cpf,
-                 Date horarioAula, Date diaAula, Gym gym) {
+                 Date horarioAula, String diaAula, Gym gym) {
         this.matricula = matricula;
         this.nome = nome;
         this.sobrenome = sobrenome;
@@ -85,11 +85,11 @@ public class Aluno {
         this.horarioAula = horarioAula;
     }
 
-    public Date getDiaAula() {
+    public String getDiaAula() {
         return diaAula;
     }
 
-    public void setDiaAula(Date diaAula) {
+    public void setDiaAula(String diaAula) {
         this.diaAula = diaAula;
     }
 
