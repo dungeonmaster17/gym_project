@@ -11,7 +11,6 @@ public class HidroginasticaFinanceiroService implements HidroginasticaGymService
     public HidroginasticaFinanceiroService() {
     }
 
-
     @Override
     public Double getValorTotalAulaHidroginasticaByQuartaManha(Hidroginastica hidroginastica) {
         return hidroginastica.getHorariosQuartaManhaList().size() * VALOR_HORA_AULA_HIDROGINASTICA_MANHA;
@@ -71,7 +70,6 @@ public class HidroginasticaFinanceiroService implements HidroginasticaGymService
     public Double getValorTotalAulaHidroginasticaBySabado(Hidroginastica hidroginastica) {
         return getValorTotalAulaHidroginasticaBySabadoManha(hidroginastica) + getValorTotalAulaHidroginasticaBySabadoTarde(hidroginastica) + getValorTotalAulaHidroginasticaBySabadoNoite(hidroginastica);
     }
-
 
     @Override
     public Double getValorTotalAulaHidroginasticaByWeek(Hidroginastica hidroginastica) {

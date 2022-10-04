@@ -150,7 +150,7 @@ public class Boxe extends Sala {
     }
 
     @Override
-    public void setDiaAulaBoxe(Aluno aluno) {
+    public void setDiaAula(Aluno aluno) {
         if (aluno.getDiaAula() == "qua") {
             addHorarioQuarta(aluno);
         }
@@ -278,7 +278,6 @@ public class Boxe extends Sala {
                 }
             }
         }
-
     }
 
     public String findProfissionalBoxe() {

@@ -108,7 +108,7 @@ public abstract class Sala {
     public abstract void addHorarioSabadoNoite(Aluno aluno);
 
     //setando aula no dia
-    public abstract void setDiaAulaBoxe(Aluno aluno);
+    public abstract void setDiaAula(Aluno aluno);
 
     //verificando se aula esta cheia
     public abstract boolean isFull(Aluno aluno) throws Exception;

@@ -132,7 +132,7 @@ public class Program {
                         escolherHorario(1, aluno);
                     } else {
                         ba.addAluno(aluno);
-                        ba.setDiaAulaBoxe(aluno);
+                        ba.setDiaAula(aluno);
                         ba.setHorarioAulaBoxe(aluno);
                     }
                     break;
@@ -150,9 +150,12 @@ public class Program {
                     if (ha.isFull(aluno)) {
                         msgErroTurmaCheia(aluno);
                         escolherHorario(2, aluno);
+                    } else{
+                        ha.addAluno(aluno);
+                        ha.setDiaAula(aluno);
+                        ha.setHorarioAulaHidroginastica(aluno);
                     }
-                    ha.addAluno(aluno);
-                    ha.setHorarioAulaHidroginastica(aluno);
+
                     break;
                 case 3:
                     System.out.println("+----------------------------------------------+");
@@ -168,9 +171,12 @@ public class Program {
                     if (sa.isFull(aluno)) {
                         msgErroTurmaCheia(aluno);
                         escolherHorario(3, aluno);
+                    } else{
+                        sa.addAluno(aluno);
+                        sa.setDiaAula(aluno);
+                        sa.setHorarioAulaSpinning(aluno);
                     }
-                    sa.addAluno(aluno);
-                    sa.setHorarioAulaSpinning(aluno);
+
                     break;
             }
         } catch (Exception e) {

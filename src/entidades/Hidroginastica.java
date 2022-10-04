@@ -150,7 +150,7 @@ public class Hidroginastica extends Sala {
     }
 
     @Override
-    public void setDiaAulaBoxe(Aluno aluno) {
+    public void setDiaAula(Aluno aluno) {
         if (aluno.getDiaAula() == "qua") {
             addHorarioQuarta(aluno);
         }
