@@ -127,10 +127,10 @@ public class Program {
                     aluno.setDiaAula(sc.next().toLowerCase());
                     System.out.print("| HORÁRIO (HH:mm): ");
                     aluno.setHorarioAula(sdfHora.parse(sc.next()));
-                    if (ba.isFull(aluno)) {
+                    if(ba.isFull(aluno)) {
                         msgErroTurmaCheia(aluno);
                         escolherHorario(1, aluno);
-                    } else {
+                    } else{
                         ba.addAluno(aluno);
                         ba.setDiaAula(aluno);
                         ba.setHorarioAulaBoxe(aluno);
@@ -147,7 +147,7 @@ public class Program {
                     aluno.setDiaAula(sc.next().toLowerCase());
                     System.out.print("| HORÁRIO (HH:mm): ");
                     aluno.setHorarioAula(sdfHora.parse(sc.next()));
-                    if (ha.isFull(aluno)) {
+                    if(ha.isFull(aluno)) {
                         msgErroTurmaCheia(aluno);
                         escolherHorario(2, aluno);
                     } else{
@@ -155,7 +155,6 @@ public class Program {
                         ha.setDiaAula(aluno);
                         ha.setHorarioAulaHidroginastica(aluno);
                     }
-
                     break;
                 case 3:
                     System.out.println("+----------------------------------------------+");
@@ -168,7 +167,7 @@ public class Program {
                     aluno.setDiaAula(sc.next().toLowerCase());
                     System.out.print("| HORÁRIO (HH:mm): ");
                     aluno.setHorarioAula(sdfHora.parse(sc.next()));
-                    if (sa.isFull(aluno)) {
+                    if(sa.isFull(aluno)) {
                         msgErroTurmaCheia(aluno);
                         escolherHorario(3, aluno);
                     } else{
@@ -176,7 +175,6 @@ public class Program {
                         sa.setDiaAula(aluno);
                         sa.setHorarioAulaSpinning(aluno);
                     }
-
                     break;
             }
         } catch (Exception e) {
@@ -576,12 +574,16 @@ public class Program {
                         int opListaBoxeQuarta = sc.nextInt();
                         switch (opListaBoxeQuarta) {
                             case 1:
+                                System.out.printf("%.2f%n", gym.getBoxeGymService().getValorTotalAulaBoxeByQuartaManha(ba));
                                 break;
                             case 2:
+                                System.out.printf("%.2f%n", gym.getBoxeGymService().getValorTotalAulaBoxeByQuartaTarde(ba));
                                 break;
                             case 3:
+                                System.out.printf("%.2f%n", gym.getBoxeGymService().getValorTotalAulaBoxeByQuartaNoite(ba));
                                 break;
                             case 4:
+                                System.out.printf("%.2f%n", gym.getBoxeGymService().getValorTotalAulaBoxeByQuarta(ba));
                                 break;
                         }
                         //break;
@@ -597,12 +599,16 @@ public class Program {
                         int opListaBoxeSexta = sc.nextInt();
                         switch (opListaBoxeSexta) {
                             case 1:
+                                System.out.printf("%.2f%n", gym.getBoxeGymService().getValorTotalAulaBoxeBySextaManha(ba));
                                 break;
                             case 2:
+                                System.out.printf("%.2f%n", gym.getBoxeGymService().getValorTotalAulaBoxeBySextaTarde(ba));
                                 break;
                             case 3:
+                                System.out.printf("%.2f%n", gym.getBoxeGymService().getValorTotalAulaBoxeBySextaNoite(ba));
                                 break;
                             case 4:
+                                System.out.printf("%.2f%n", gym.getBoxeGymService().getValorTotalAulaBoxeBySexta(ba));
                                 break;
                         }
                         //break;
@@ -618,17 +624,21 @@ public class Program {
                         int opListaBoxeSabado = sc.nextInt();
                         switch (opListaBoxeSabado) {
                             case 1:
+                                System.out.printf("%.2f%n", gym.getBoxeGymService().getValorTotalAulaBoxeBySabadoManha(ba));
                                 break;
                             case 2:
+                                System.out.printf("%.2f%n", gym.getBoxeGymService().getValorTotalAulaBoxeBySabadoTarde(ba));
                                 break;
                             case 3:
+                                System.out.printf("%.2f%n", gym.getBoxeGymService().getValorTotalAulaBoxeBySabadoNoite(ba));
                                 break;
                             case 4:
+                                System.out.printf("%.2f%n", gym.getBoxeGymService().getValorTotalAulaBoxeBySabado(ba));
                                 break;
                         }
                         //break;
                     case 4:
-                        System.out.println(ba.findAllAlunoBoxeByWeek());
+                        System.out.printf("%.2f%n", gym.getBoxeGymService().getValorTotalAulaBoxeByWeek(ba));
                 }
             case 2:
                 System.out.println("+----------------------------------------------+");
@@ -653,12 +663,16 @@ public class Program {
                         int opListaHidroQuarta = sc.nextInt();
                         switch (opListaHidroQuarta) {
                             case 1:
+                                System.out.printf("%.2f%n", gym.getHidroginasticaGymService().getValorTotalAulaHidroginasticaByQuartaManha(ha));
                                 break;
                             case 2:
+                                System.out.printf("%.2f%n", gym.getHidroginasticaGymService().getValorTotalAulaHidroginasticaByQuartaTarde(ha));
                                 break;
                             case 3:
+                                System.out.printf("%.2f%n", gym.getHidroginasticaGymService().getValorTotalAulaHidroginasticaByQuartaNoite(ha));
                                 break;
                             case 4:
+                                System.out.printf("%.2f%n", gym.getHidroginasticaGymService().getValorTotalAulaHidroginasticaByQuarta(ha));
                                 break;
                         }
                         //break;
@@ -674,12 +688,16 @@ public class Program {
                         int opListaHidroSexta = sc.nextInt();
                         switch (opListaHidroSexta) {
                             case 1:
+                                System.out.printf("%.2f%n", gym.getHidroginasticaGymService().getValorTotalAulaHidroginasticaBySextaManha(ha));
                                 break;
                             case 2:
+                                System.out.printf("%.2f%n", gym.getHidroginasticaGymService().getValorTotalAulaHidroginasticaBySextaTarde(ha));
                                 break;
                             case 3:
+                                System.out.printf("%.2f%n", gym.getHidroginasticaGymService().getValorTotalAulaHidroginasticaBySextaNoite(ha));
                                 break;
                             case 4:
+                                System.out.printf("%.2f%n", gym.getHidroginasticaGymService().getValorTotalAulaHidroginasticaBySexta(ha));
                                 break;
                         }
                         //break;
@@ -695,17 +713,21 @@ public class Program {
                         int opListaHidroSabado = sc.nextInt();
                         switch (opListaHidroSabado) {
                             case 1:
+                                System.out.printf("%.2f%n", gym.getHidroginasticaGymService().getValorTotalAulaHidroginasticaBySabadoManha(ha));
                                 break;
                             case 2:
+                                System.out.printf("%.2f%n", gym.getHidroginasticaGymService().getValorTotalAulaHidroginasticaBySabadoTarde(ha));
                                 break;
                             case 3:
+                                System.out.printf("%.2f%n", gym.getHidroginasticaGymService().getValorTotalAulaHidroginasticaBySabadoNoite(ha));
                                 break;
                             case 4:
+                                System.out.printf("%.2f%n", gym.getHidroginasticaGymService().getValorTotalAulaHidroginasticaBySabado(ha));
                                 break;
                         }
                         //break;
                     case 4:
-                        System.out.println(ha.findAllAlunoHidroginasticaByWeek());
+                        System.out.printf("%.2f%n", gym.getHidroginasticaGymService().getValorTotalAulaHidroginasticaByWeek(ha));
                 }
             case 3:
                 System.out.println("+----------------------------------------------+");
@@ -730,12 +752,16 @@ public class Program {
                         int opListaSpinningQuarta = sc.nextInt();
                         switch (opListaSpinningQuarta) {
                             case 1:
+                                System.out.printf("%.2f%n", gym.getSpinningGymService().getValorTotalAulaSpinningByQuartaManha(sa));
                                 break;
                             case 2:
+                                System.out.printf("%.2f%n", gym.getSpinningGymService().getValorTotalAulaSpinningByQuartaTarde(sa));
                                 break;
                             case 3:
+                                System.out.printf("%.2f%n", gym.getSpinningGymService().getValorTotalAulaSpinningByQuartaNoite(sa));
                                 break;
                             case 4:
+                                System.out.printf("%.2f%n", gym.getSpinningGymService().getValorTotalAulaSpinningByQuarta(sa));
                                 break;
                         }
                         //break;
@@ -751,12 +777,16 @@ public class Program {
                         int opListaSpinningSexta = sc.nextInt();
                         switch (opListaSpinningSexta) {
                             case 1:
+                                System.out.printf("%.2f%n", gym.getSpinningGymService().getValorTotalAulaSpinningBySextaManha(sa));
                                 break;
                             case 2:
+                                System.out.printf("%.2f%n", gym.getSpinningGymService().getValorTotalAulaSpinningBySextaTarde(sa));
                                 break;
                             case 3:
+                                System.out.printf("%.2f%n", gym.getSpinningGymService().getValorTotalAulaSpinningBySextaNoite(sa));
                                 break;
                             case 4:
+                                System.out.printf("%.2f%n", gym.getSpinningGymService().getValorTotalAulaSpinningBySexta(sa));
                                 break;
                         }
                         //break;
@@ -772,17 +802,21 @@ public class Program {
                         int opListaSpinningSabado = sc.nextInt();
                         switch (opListaSpinningSabado) {
                             case 1:
+                                System.out.printf("%.2f%n", gym.getSpinningGymService().getValorTotalAulaSpinningBySabadoManha(sa));
                                 break;
                             case 2:
+                                System.out.printf("%.2f%n", gym.getSpinningGymService().getValorTotalAulaSpinningBySabadoTarde(sa));
                                 break;
                             case 3:
+                                System.out.printf("%.2f%n", gym.getSpinningGymService().getValorTotalAulaSpinningBySabadoNoite(sa));
                                 break;
                             case 4:
+                                System.out.printf("%.2f%n", gym.getSpinningGymService().getValorTotalAulaSpinningBySabado(sa));
                                 break;
                         }
                         //break;
                     case 4:
-                        System.out.println(sa.findAllAlunosSpinningByWeek());
+                        System.out.printf("%.2f%n", gym.getSpinningGymService().getValorTotalAulaSpinningByWeek(sa));
                 }
         }
     }
