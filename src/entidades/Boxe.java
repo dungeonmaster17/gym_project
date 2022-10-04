@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Boxe extends Sala {
-    public static final int AULA_MANHA_SIZE = 5;
+    public static final int AULA_MANHA_SIZE = 1;
     public static final int AULA_TARDE_SIZE = 5;
     public static final int AULA_NOITE_SIZE = 5;
     public static final String HORARIO_MANHA_BOXE = "09:00";

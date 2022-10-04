@@ -68,7 +68,7 @@ public class SpinningFinanceiroService implements SpinningGymService {
 
     @Override
     public Double getValorTotalAulaSpinningBySabado(Spinning spinning) {
-        return null;
+        return getValorTotalAulaSpinningBySabadoManha(spinning) + getValorTotalAulaSpinningBySabadoTarde(spinning) + getValorTotalAulaSpinningBySabadoNoite(spinning);
     }
 
     @Override
