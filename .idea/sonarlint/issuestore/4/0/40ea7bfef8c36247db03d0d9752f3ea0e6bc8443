@@ -1,0 +1,54 @@
+
+\	java:S112Ê"FDefine and throw a dedicated exception instead of using a generic one.(¯§–Ü
+\	java:S112Ì"FDefine and throw a dedicated exception instead of using a generic one.(—‡Ù™
+a	java:S112Ó"FDefine and throw a dedicated exception instead of using a generic one.(ºö°­ûÿÿÿÿ
+[	java:S112Õ"FDefine and throw a dedicated exception instead of using a generic one.(¶Ú™
+\	java:S112Ü"FDefine and throw a dedicated exception instead of using a generic one.(ê¸õç
+a	java:S112Ş"FDefine and throw a dedicated exception instead of using a generic one.(¾¶Æ¶ùÿÿÿÿ
+a	java:S112ç"FDefine and throw a dedicated exception instead of using a generic one.(Ã…¶ñıÿÿÿÿ
+\	java:S112é"FDefine and throw a dedicated exception instead of using a generic one.(—‡Ù™
+\	java:S112ğ"FDefine and throw a dedicated exception instead of using a generic one.(É¡ıî
+[	java:S112ò"FDefine and throw a dedicated exception instead of using a generic one.(¶Ú™
+\	java:S112ù"FDefine and throw a dedicated exception instead of using a generic one.(­£”á
+a	java:S112û"FDefine and throw a dedicated exception instead of using a generic one.(¾¶Æ¶ùÿÿÿÿ
+\	java:S112Å"FDefine and throw a dedicated exception instead of using a generic one.(¨…Ü›
+S
+java:S4973"<Strings and Boxed types should be compared using "equals()".(şØù¼
+S
+java:S4973 "<Strings and Boxed types should be compared using "equals()".(æÂÅæ
+X
+java:S4973£"<Strings and Boxed types should be compared using "equals()".(¯ÜÛÑúÿÿÿÿ
+F
+java:S2387"+"sdfHora" is the name of a field in "Sala".(ÚÅÒ¾ÿÿÿÿÿ
+=
+java:S2387"'"gym" is the name of a field in "Sala".(Îëşú
+n
+java:S3776©"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ëÂÉşÿÿÿÿ
+c
+java:S1871¬"MThis branch's code block is the same as the block for the branch on line 170.(¹Á€
+i
+java:S1871®"MThis branch's code block is the same as the block for the branch on line 170.(ŒÚ¹úÿÿÿÿ
+d
+java:S1871¶"MThis branch's code block is the same as the block for the branch on line 178.(™Œî­
+d
+java:S1871´"MThis branch's code block is the same as the block for the branch on line 178.(ö®ÔÁ
+i
+java:S1871¼"MThis branch's code block is the same as the block for the branch on line 186.(‹·š¦øÿÿÿÿ
+i
+java:S1871¾"MThis branch's code block is the same as the block for the branch on line 186.(¢£—¶üÿÿÿÿ
+i
+java:S3776Å"RRefactor this method to reduce its Cognitive Complexity from 38 to the 15 allowed.(¨…Ü›
+X
+java:S3457Ê"AFormat specifiers should be used instead of string concatenation.(¯§–Ü
+]
+java:S3457Ó"AFormat specifiers should be used instead of string concatenation.(ºö°­ûÿÿÿÿ
+X
+java:S3457Ü"AFormat specifiers should be used instead of string concatenation.(ê¸õç
+]
+java:S3457ç"AFormat specifiers should be used instead of string concatenation.(Ã…¶ñıÿÿÿÿ
+X
+java:S3457ğ"AFormat specifiers should be used instead of string concatenation.(É¡ıî
+X
+java:S3457ù"AFormat specifiers should be used instead of string concatenation.(­£”á
+=
+java:S1068"'Remove this unused "gym" private field.(Îëşú

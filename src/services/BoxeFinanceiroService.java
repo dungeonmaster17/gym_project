@@ -11,54 +11,63 @@ public class BoxeFinanceiroService implements BoxeGymService {
     public BoxeFinanceiroService() {
     }
 
-
     @Override
     public Double getValorTotalAulaBoxeByQuartaManha(Boxe boxe) {
-        return null;
+        return boxe.getHorariosQuartaManhaList().size() * VALOR_HORA_AULA_BOXE_MANHA;
     }
 
     @Override
     public Double getValorTotalAulaBoxeByQuartaTarde(Boxe boxe) {
-        return null;
+        return boxe.getHorariosQuartaTardeList().size() * VALOR_HORA_AULA_BOXE_TARDE;
     }
 
     @Override
     public Double getValorTotalAulaBoxeByQuartaNoite(Boxe boxe) {
-        return null;
+        return boxe.getHorariosQuartaNoiteList().size() * VALOR_HORA_AULA_BOXE_NOITE;
     }
 
     @Override
     public Double getValorTotalAulaBoxeBySextaManha(Boxe boxe) {
-        return null;
+        return boxe.getHorariosSextaManhaList().size() * VALOR_HORA_AULA_BOXE_MANHA;
     }
 
     @Override
     public Double getValorTotalAulaBoxeBySextaTarde(Boxe boxe) {
-        return null;
+        return boxe.getHorariosSextaTardeList().size() * VALOR_HORA_AULA_BOXE_TARDE;
     }
 
     @Override
     public Double getValorTotalAulaBoxeBySextaNoite(Boxe boxe) {
-        return null;
+        return boxe.getHorariosSextaNoiteList().size() * VALOR_HORA_AULA_BOXE_NOITE;
     }
 
     @Override
     public Double getValorTotalAulaBoxeBySabadoManha(Boxe boxe) {
-        return null;
+        return boxe.getHorariosSabadoManhaList().size() * VALOR_HORA_AULA_BOXE_MANHA;
     }
 
     @Override
     public Double getValorTotalAulaBoxeBySabadoTarde(Boxe boxe) {
-        return null;
+        return boxe.getHorariosSabadoTardeList().size() * VALOR_HORA_AULA_BOXE_TARDE;
     }
 
     @Override
     public Double getValorTotalAulaBoxeBySabadoNoite(Boxe boxe) {
-        return null;
+        return boxe.getHorariosSabadoNoiteList().size() * VALOR_HORA_AULA_BOXE_NOITE;
     }
 
     @Override
-    public Double getValorTotalAulaBoxeByDay(Boxe boxe) {
-        return null;
+    public Double getValorTotalAulaBoxeByQuarta(Boxe boxe) {
+        return getValorTotalAulaBoxeByQuartaManha(boxe) + getValorTotalAulaBoxeByQuartaTarde(boxe) + getValorTotalAulaBoxeByQuartaNoite(boxe);
+    }
+
+    @Override
+    public Double getValorTotalAulaBoxeBySexta(Boxe boxe) {
+        return getValorTotalAulaBoxeBySextaManha(boxe) + getValorTotalAulaBoxeBySextaTarde(boxe) + getValorTotalAulaBoxeBySextaNoite(boxe);
+    }
+
+    @Override
+    public Double getValorTotalAulaBoxeBySabado(Boxe boxe) {
+        return getValorTotalAulaBoxeBySabadoManha(boxe) + getValorTotalAulaBoxeBySabadoTarde(boxe) + getValorTotalAulaBoxeBySabadoNoite(boxe);
     }
 }

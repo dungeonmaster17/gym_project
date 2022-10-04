@@ -21,5 +21,10 @@ public interface BoxeGymService {
     Double getValorTotalAulaBoxeBySabadoTarde(Boxe boxe);
 
     Double getValorTotalAulaBoxeBySabadoNoite(Boxe boxe);
-    Double getValorTotalAulaBoxeByDay(Boxe boxe);
+
+    Double getValorTotalAulaBoxeByQuarta(Boxe boxe);
+
+    Double getValorTotalAulaBoxeBySexta(Boxe boxe);
+
+    Double getValorTotalAulaBoxeBySabado(Boxe boxe);
 }

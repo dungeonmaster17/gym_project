@@ -30,7 +30,7 @@ public class Program {
             try {
                 System.out.println("+----------------------------------------------+");
                 System.out.println("|               Think Big Gym                  |");
-                System.out.printf("|               '%s'                  |" , sdfNow.format(dateNow));
+                System.out.printf("|               '%s'                  |", sdfNow.format(dateNow));
                 System.out.println("\n+----------------------------------------------+");
                 System.out.println("|           *** MENU PRINCIPAL ***             |");
                 System.out.println("+----------------------------------------------+");
@@ -128,7 +128,7 @@ public class Program {
                     aluno.setDiaAula(sc.next());
                     System.out.print("| HORÁRIO (HH:mm): ");
                     aluno.setHorarioAula(sdfHora.parse(sc.next()));
-                    if(ba.isFull(aluno)){
+                    if (ba.isFull(aluno)) {
                         msgErroTurmaCheia(aluno);
                         escolherHorario(1, aluno);
                     } else {
@@ -148,7 +148,7 @@ public class Program {
                     aluno.setDiaAula(sc.next());
                     System.out.print("| HORÁRIO (HH:mm): ");
                     aluno.setHorarioAula(sdfHora.parse(sc.next()));
-                    if(ha.isFull(aluno)){
+                    if (ha.isFull(aluno)) {
                         msgErroTurmaCheia(aluno);
                         escolherHorario(2, aluno);
                     }
@@ -166,7 +166,7 @@ public class Program {
                     aluno.setDiaAula(sc.next());
                     System.out.print("| HORÁRIO (HH:mm): ");
                     aluno.setHorarioAula(sdfHora.parse(sc.next()));
-                    if(sa.isFull(aluno)){
+                    if (sa.isFull(aluno)) {
                         msgErroTurmaCheia(aluno);
                         escolherHorario(3, aluno);
                     }
@@ -210,7 +210,7 @@ public class Program {
         System.out.print("| OPÇÃO: ");
         int op = sc.nextInt();
         System.out.println("************************************************");
-        switch (op){
+        switch (op) {
             case 1:
                 System.out.println("+----------------------------------------------+");
                 System.out.println("|        *** RELAÇÃO ALUNOS BOXE ***           |");
@@ -223,15 +223,15 @@ public class Program {
                 switch (opDiaBoxe) {
                     case 1:
                         System.out.println("+----------------------------------------------+");
-                        System.out.println("|        *** RELAÇÃO ALUNOS BOXE ***           |");
+                        System.out.println("|     *** RELAÇÃO ALUNOS BOXE QUARTA ***       |");
                         System.out.println("+----------------------------------------------+");
                         System.out.println("| 1. Lista Manhã                               |");
                         System.out.println("| 2. Lista Tarde                               |");
                         System.out.println("| 3. Lista Noite                               |");
                         System.out.println("| 4. Todos os Alunos                           |");
                         System.out.println("+----------------------------------------------+");
-                        int opLista = sc.nextInt();
-                        switch (opLista) {
+                        int opListaBoxeQuarta = sc.nextInt();
+                        switch (opListaBoxeQuarta) {
                             case 1:
                                 System.out.println(ba.findAllAlunoBoxeByDayAndHour("qua", sdfHora.parse("09:00")));
                                 break;
@@ -242,11 +242,58 @@ public class Program {
                                 System.out.println(ba.findAllAlunoBoxeByDayAndHour("qua", sdfHora.parse("19:00")));
                                 break;
                             case 4:
-                                System.out.println(ba.findAllAlunoBoxeByWeek());
+                                //System.out.println(ba.findAllAlunoBoxeByWeek());
+                        }
+                        break;
+                    case 2:
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("|      *** RELAÇÃO ALUNOS BOXE SEXTA ***       |");
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("| 1. Lista Manhã                               |");
+                        System.out.println("| 2. Lista Tarde                               |");
+                        System.out.println("| 3. Lista Noite                               |");
+                        System.out.println("| 4. Todos os Alunos                           |");
+                        System.out.println("+----------------------------------------------+");
+                        int opListaBoxeSexta = sc.nextInt();
+                        switch (opListaBoxeSexta) {
+                            case 1:
+                                System.out.println(ba.findAllAlunoBoxeByDayAndHour("sex", sdfHora.parse("09:00")));
+                                break;
+                            case 2:
+                                System.out.println(ba.findAllAlunoBoxeByDayAndHour("sex", sdfHora.parse("15:00")));
+                                break;
+                            case 3:
+                                System.out.println(ba.findAllAlunoBoxeByDayAndHour("sex", sdfHora.parse("19:00")));
+                                break;
+                            case 4:
+                                //System.out.println(ba.findAllAlunoBoxeByWeek());
+                        }
+                        break;
+                    case 3:
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("|    *** RELAÇÃO ALUNOS BOXE SABADO ***        |");
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("| 1. Lista Manhã                               |");
+                        System.out.println("| 2. Lista Tarde                               |");
+                        System.out.println("| 3. Lista Noite                               |");
+                        System.out.println("| 4. Todos os Alunos                           |");
+                        System.out.println("+----------------------------------------------+");
+                        int opListaBoxeSabado = sc.nextInt();
+                        switch (opListaBoxeSabado) {
+                            case 1:
+                                System.out.println(ba.findAllAlunoBoxeByDayAndHour("sab", sdfHora.parse("09:00")));
+                                break;
+                            case 2:
+                                System.out.println(ba.findAllAlunoBoxeByDayAndHour("sab", sdfHora.parse("15:00")));
+                                break;
+                            case 3:
+                                System.out.println(ba.findAllAlunoBoxeByDayAndHour("sab", sdfHora.parse("19:00")));
+                                break;
+                            case 4:
+                                //System.out.println(ba.findAllAlunoBoxeByWeek());
                         }
                         break;
                 }
-                break;
             case 2:
                 System.out.println("+----------------------------------------------+");
                 System.out.println("|    *** RELAÇÃO ALUNOS HIDROGINASTICA ***     |");
@@ -259,24 +306,74 @@ public class Program {
                 switch (opDiaHidro) {
                     case 1:
                         System.out.println("+----------------------------------------------+");
-                        System.out.println("|    *** RELAÇÃO ALUNOS HIDROGINASTICA ***     |");
+                        System.out.println("| *** RELAÇÃO ALUNOS HIDROGINASTICA QUARTA *** |");
                         System.out.println("+----------------------------------------------+");
                         System.out.println("| 1. Lista Manhã                               |");
                         System.out.println("| 2. Lista Tarde                               |");
                         System.out.println("| 3. Lista Noite                               |");
                         System.out.println("| 4. Todos os Alunos                           |");
                         System.out.println("+----------------------------------------------+");
-                        int opLista = sc.nextInt();
-                        switch (opLista) {
+                        int opListaHidroQuarta = sc.nextInt();
+                        switch (opListaHidroQuarta) {
                             case 1:
-
+                                //System.out.println(ba.findAllAlunoBoxeByDayAndHour("qua", sdfHora.parse("09:00")));
                                 break;
                             case 2:
-
+                                //System.out.println(ba.findAllAlunoBoxeByDayAndHour("qua", sdfHora.parse("15:00")));
                                 break;
                             case 3:
-
+                                //System.out.println(ba.findAllAlunoBoxeByDayAndHour("qua", sdfHora.parse("19:00")));
                                 break;
+                            case 4:
+                                //System.out.println(ba.findAllAlunoBoxeByWeek());
+                        }
+                        break;
+                    case 2:
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("| *** RELAÇÃO ALUNOS HIDROGINASTICA SEXTA ***  |");
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("| 1. Lista Manhã                               |");
+                        System.out.println("| 2. Lista Tarde                               |");
+                        System.out.println("| 3. Lista Noite                               |");
+                        System.out.println("| 4. Todos os Alunos                           |");
+                        System.out.println("+----------------------------------------------+");
+                        int opListaHidroSexta = sc.nextInt();
+                        switch (opListaHidroSexta) {
+                            case 1:
+                                System.out.println(ba.findAllAlunoBoxeByDayAndHour("sex", sdfHora.parse("09:00")));
+                                break;
+                            case 2:
+                                System.out.println(ba.findAllAlunoBoxeByDayAndHour("sex", sdfHora.parse("15:00")));
+                                break;
+                            case 3:
+                                System.out.println(ba.findAllAlunoBoxeByDayAndHour("sex", sdfHora.parse("19:00")));
+                                break;
+                            case 4:
+                                //System.out.println(ba.findAllAlunoBoxeByWeek());
+                        }
+                        break;
+                    case 3:
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("| *** RELAÇÃO ALUNOS HIDROGINASTICA SABADO *** |");
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("| 1. Lista Manhã                               |");
+                        System.out.println("| 2. Lista Tarde                               |");
+                        System.out.println("| 3. Lista Noite                               |");
+                        System.out.println("| 4. Todos os Alunos                           |");
+                        System.out.println("+----------------------------------------------+");
+                        int opListaHidroSabado = sc.nextInt();
+                        switch (opListaHidroSabado) {
+                            case 1:
+                                System.out.println(ba.findAllAlunoBoxeByDayAndHour("sab", sdfHora.parse("09:00")));
+                                break;
+                            case 2:
+                                System.out.println(ba.findAllAlunoBoxeByDayAndHour("sab", sdfHora.parse("15:00")));
+                                break;
+                            case 3:
+                                System.out.println(ba.findAllAlunoBoxeByDayAndHour("sab", sdfHora.parse("19:00")));
+                                break;
+                            case 4:
+                                //System.out.println(ba.findAllAlunoBoxeByWeek());
                         }
                         break;
                 }
@@ -288,28 +385,78 @@ public class Program {
                 System.out.println("|   2. Sex                                     |");
                 System.out.println("|   3. Sab                                     |");
                 System.out.println("+----------------------------------------------+");
-                int opDiaSpin = sc.nextInt();
-                switch (opDiaSpin) {
+                int opDiaSpinning = sc.nextInt();
+                switch (opDiaSpinning) {
                     case 1:
                         System.out.println("+----------------------------------------------+");
-                        System.out.println("|      *** RELAÇÃO ALUNOS SPINNING ***         |");
+                        System.out.println("|   *** RELAÇÃO ALUNOS SPINNING QUARTA ***     |");
                         System.out.println("+----------------------------------------------+");
                         System.out.println("| 1. Lista Manhã                               |");
                         System.out.println("| 2. Lista Tarde                               |");
                         System.out.println("| 3. Lista Noite                               |");
                         System.out.println("| 4. Todos os Alunos                           |");
                         System.out.println("+----------------------------------------------+");
-                        int opLista = sc.nextInt();
-                        switch (opLista) {
+                        int opListaSpinningQuarta = sc.nextInt();
+                        switch (opListaSpinningQuarta) {
                             case 1:
-
+                                //System.out.println(ba.findAllAlunoBoxeByDayAndHour("qua", sdfHora.parse("09:00")));
                                 break;
                             case 2:
-
+                                //System.out.println(ba.findAllAlunoBoxeByDayAndHour("qua", sdfHora.parse("15:00")));
                                 break;
                             case 3:
-
+                                //System.out.println(ba.findAllAlunoBoxeByDayAndHour("qua", sdfHora.parse("19:00")));
                                 break;
+                            case 4:
+                                //System.out.println(ba.findAllAlunoBoxeByWeek());
+                        }
+                        break;
+                    case 2:
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("|    *** RELAÇÃO ALUNOS SPINNING SEXTA ***     |");
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("| 1. Lista Manhã                               |");
+                        System.out.println("| 2. Lista Tarde                               |");
+                        System.out.println("| 3. Lista Noite                               |");
+                        System.out.println("| 4. Todos os Alunos                           |");
+                        System.out.println("+----------------------------------------------+");
+                        int opListaSpinningSexta = sc.nextInt();
+                        switch (opListaSpinningSexta) {
+                            case 1:
+                                //System.out.println(ba.findAllAlunoBoxeByDayAndHour("sex", sdfHora.parse("09:00")));
+                                break;
+                            case 2:
+                                //System.out.println(ba.findAllAlunoBoxeByDayAndHour("sex", sdfHora.parse("15:00")));
+                                break;
+                            case 3:
+                                //System.out.println(ba.findAllAlunoBoxeByDayAndHour("sex", sdfHora.parse("19:00")));
+                                break;
+                            case 4:
+                                //System.out.println(ba.findAllAlunoBoxeByWeek());
+                        }
+                        break;
+                    case 3:
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("|    *** RELAÇÃO ALUNOS SPINNING SABADO ***    |");
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("| 1. Lista Manhã                               |");
+                        System.out.println("| 2. Lista Tarde                               |");
+                        System.out.println("| 3. Lista Noite                               |");
+                        System.out.println("| 4. Todos os Alunos                           |");
+                        System.out.println("+----------------------------------------------+");
+                        int opListaSpinningSabado = sc.nextInt();
+                        switch (opListaSpinningSabado) {
+                            case 1:
+                                //System.out.println(ba.findAllAlunoBoxeByDayAndHour("sab", sdfHora.parse("09:00")));
+                                break;
+                            case 2:
+                                //System.out.println(ba.findAllAlunoBoxeByDayAndHour("sab", sdfHora.parse("15:00")));
+                                break;
+                            case 3:
+                                //System.out.println(ba.findAllAlunoBoxeByDayAndHour("sab", sdfHora.parse("19:00")));
+                                break;
+                            case 4:
+                                //System.out.println(ba.findAllAlunoBoxeByWeek());
                         }
                         break;
                 }
@@ -411,7 +558,7 @@ public class Program {
                         //System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getBoxeGymService().getValorTotalAulaBoxeByNoite(ba)));
                         break;
                     case 'd':
-                        System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getBoxeGymService().getValorTotalAulaBoxeByDay(ba)));
+                        //System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getBoxeGymService().getValorTotalAulaBoxeByDay(ba)));
                         break;
                 }
                 break;
