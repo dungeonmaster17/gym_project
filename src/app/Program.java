@@ -537,82 +537,248 @@ public class Program {
 
     public static void financeiro() {
         System.out.println("+----------------------------------------------+");
-        System.out.println("|       *** RELATORIO DE PAGAMENTOS ***        |");
+        System.out.println("|             *** FINANCEIRO ***               |");
         System.out.println("+----------------------------------------------+");
         System.out.println("| 1. Boxe                                      |");
-        System.out.println("|   a. Manhã                                   |");
-        System.out.println("|   b. Tarde                                   |");
-        System.out.println("|   c. Noite                                   |");
-        System.out.println("|   d. Total Dia                               |");
-        System.out.println("+---------------------------------------------+");
-        System.out.println("| 2.Hidroginastica                             |");
-        System.out.println("|   a. Manhã                                   |");
-        System.out.println("|   b. Tarde                                   |");
-        System.out.println("|   c. Noite                                   |");
-        System.out.println("|   d. Total Dia                               |");
-        System.out.println("+---------------------------------------------+");
-        System.out.println("| 3.Spinning                                   |");
-        System.out.println("|   a. Manhã                                   |");
-        System.out.println("|   b. Tarde                                   |");
-        System.out.println("|   c. Noite                                   |");
-        System.out.println("|   d. Total Dia                               |");
+        System.out.println("| 2. Hidroginastica                            |");
+        System.out.println("| 3. Spinning                                  |");
         System.out.println("+----------------------------------------------+");
-        System.out.print("| AULA: ");
-        int opFinN = sc.nextInt();
-        System.out.print("| TURNO/DIA: ");
-        char opFinL = sc.next().toLowerCase().charAt(0);
-        System.out.println("+----------------------------------------------+");
-        switch (opFinN) {
-            case 1:
-                switch (opFinL) {
-                    case 'a':
-                        //System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getBoxeGymService().getValorTotalAulaBoxeByManha(ba)));
-                        break;
-                    case 'b':
-                        //System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getBoxeGymService().getValorTotalAulaBoxeByTarde(ba)));
-                        break;
-                    case 'c':
-                        //System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getBoxeGymService().getValorTotalAulaBoxeByNoite(ba)));
-                        break;
-                    case 'd':
-                        //System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getBoxeGymService().getValorTotalAulaBoxeByDay(ba)));
-                        break;
-                }
-                break;
-            case 2:
-                switch (opFinL) {
-                    case 'a':
-                        //System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getHidroginasticaGymService().getValorTotalAulaHidroginasticaByManha(ha)));
-                        break;
-                    case 'b':
-                        //System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getHidroginasticaGymService().getValorTotalAulaHidroginasticaByTarde(ha)));
-                        break;
-                    case 'c':
-                        //System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getHidroginasticaGymService().getValorTotalAulaHidroginasticaByNoite(ha)));
-                        break;
-                    case 'd':
-                        System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getHidroginasticaGymService().getValorTotalAulaHidroginasticaByDay(ha)));
-                        break;
-                }
-                break;
-            case 3:
-                switch (opFinL) {
-                    case 'a':
-                        //System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getSpinningGymService().getValorTotalAulaSpinningByManha(sa)));
-                        break;
-                    case 'b':
-                        //System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getSpinningGymService().getValorTotalAulaSpinningByTarde(sa)));
-                        break;
-                    case 'c':
-                        //System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getSpinningGymService().getValorTotalAulaSpinningByNoite(sa)));
-                        break;
-                    case 'd':
-                        System.out.println("Valor a receber: R$ " + String.format("%.2f", gym.getSpinningGymService().getValorTotalAulaSpinningByDay(sa)));
-                        break;
-                }
-                break;
-        }
+        System.out.print("| OPÇÃO: ");
+        int op = sc.nextInt();
         System.out.println("************************************************");
+        switch (op) {
+            case 1:
+                System.out.println("+----------------------------------------------+");
+                System.out.println("|        *** RELAÇÃO VALORES BOXE ***          |");
+                System.out.println("+----------------------------------------------+");
+                System.out.println("|   1. Qua                                     |");
+                System.out.println("|   2. Sex                                     |");
+                System.out.println("|   3. Sab                                     |");
+                System.out.println("|   4. Total Semana                            |");
+                System.out.println("+----------------------------------------------+");
+                int opDiaBoxe = sc.nextInt();
+                switch (opDiaBoxe) {
+                    case 1:
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("|     *** RELAÇÃO VALORES BOXE QUARTA ***      |");
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("| 1. Total Manhã                               |");
+                        System.out.println("| 2. Total Tarde                               |");
+                        System.out.println("| 3. Total Noite                               |");
+                        System.out.println("| 4. Total Quarta                              |");
+                        System.out.println("+----------------------------------------------+");
+                        int opListaBoxeQuarta = sc.nextInt();
+                        switch (opListaBoxeQuarta) {
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                            case 4:
+                                break;
+                        }
+                        //break;
+                    case 2:
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("|      *** RELAÇÃO VALORES BOXE SEXTA ***      |");
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("| 1. Total Manhã                               |");
+                        System.out.println("| 2. Total Tarde                               |");
+                        System.out.println("| 3. Total Noite                               |");
+                        System.out.println("| 4. Total Sexta                               |");
+                        System.out.println("+----------------------------------------------+");
+                        int opListaBoxeSexta = sc.nextInt();
+                        switch (opListaBoxeSexta) {
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                            case 4:
+                                break;
+                        }
+                        //break;
+                    case 3:
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("|    *** RELAÇÃO VALORES BOXE SABADO ***       |");
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("| 1. Total Manhã                               |");
+                        System.out.println("| 2. Total Tarde                               |");
+                        System.out.println("| 3. Total Noite                               |");
+                        System.out.println("| 4. Total Sabado                              |");
+                        System.out.println("+----------------------------------------------+");
+                        int opListaBoxeSabado = sc.nextInt();
+                        switch (opListaBoxeSabado) {
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                            case 4:
+                                break;
+                        }
+                        //break;
+                    case 4:
+                        System.out.println(ba.findAllAlunoBoxeByWeek());
+                }
+            case 2:
+                System.out.println("+----------------------------------------------+");
+                System.out.println("|    *** RELAÇÃO VALORES HIDROGINASTICA ***    |");
+                System.out.println("+----------------------------------------------+");
+                System.out.println("|   1. Qua                                     |");
+                System.out.println("|   2. Sex                                     |");
+                System.out.println("|   3. Sab                                     |");
+                System.out.println("|   4. Total Semana                            |");
+                System.out.println("+----------------------------------------------+");
+                int opDiaHidro = sc.nextInt();
+                switch (opDiaHidro) {
+                    case 1:
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("| *** RELAÇÃO VALORES HIDROGINASTICA QUARTA ***|");
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("| 1. Total Manhã                               |");
+                        System.out.println("| 2. Total Tarde                               |");
+                        System.out.println("| 3. Total Noite                               |");
+                        System.out.println("| 4. Total Quarta                              |");
+                        System.out.println("+----------------------------------------------+");
+                        int opListaHidroQuarta = sc.nextInt();
+                        switch (opListaHidroQuarta) {
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                            case 4:
+                                break;
+                        }
+                        //break;
+                    case 2:
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("| *** RELAÇÃO VALORES HIDROGINASTICA SEXTA *** |");
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("| 1. Total Manhã                               |");
+                        System.out.println("| 2. Total Tarde                               |");
+                        System.out.println("| 3. Total Noite                               |");
+                        System.out.println("| 4. Total Sexta                               |");
+                        System.out.println("+----------------------------------------------+");
+                        int opListaHidroSexta = sc.nextInt();
+                        switch (opListaHidroSexta) {
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                            case 4:
+                                break;
+                        }
+                        //break;
+                    case 3:
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("| *** RELAÇÃO VALORES HIDROGINASTICA SABADO ***|");
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("| 1. Total Manhã                               |");
+                        System.out.println("| 2. Total Tarde                               |");
+                        System.out.println("| 3. Total Noite                               |");
+                        System.out.println("| 4. Total Sabado                              |");
+                        System.out.println("+----------------------------------------------+");
+                        int opListaHidroSabado = sc.nextInt();
+                        switch (opListaHidroSabado) {
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                            case 4:
+                                break;
+                        }
+                        //break;
+                    case 4:
+                        System.out.println(ha.findAllAlunoHidroginasticaByWeek());
+                }
+            case 3:
+                System.out.println("+----------------------------------------------+");
+                System.out.println("|      *** RELAÇÃO VALORES SPINNING ***        |");
+                System.out.println("+----------------------------------------------+");
+                System.out.println("|   1. Qua                                     |");
+                System.out.println("|   2. Sex                                     |");
+                System.out.println("|   3. Sab                                     |");
+                System.out.println("|   4. Total Semana                            |");
+                System.out.println("+----------------------------------------------+");
+                int opDiaSpinning = sc.nextInt();
+                switch (opDiaSpinning) {
+                    case 1:
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("|   *** RELAÇÃO VALORES SPINNING QUARTA ***    |");
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("| 1. Total Manhã                               |");
+                        System.out.println("| 2. Total Tarde                               |");
+                        System.out.println("| 3. Total Noite                               |");
+                        System.out.println("| 4. Total Quarta                              |");
+                        System.out.println("+----------------------------------------------+");
+                        int opListaSpinningQuarta = sc.nextInt();
+                        switch (opListaSpinningQuarta) {
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                            case 4:
+                                break;
+                        }
+                        //break;
+                    case 2:
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("|    *** RELAÇÃO VALORES SPINNING SEXTA ***    |");
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("| 1. Total Manhã                               |");
+                        System.out.println("| 2. Total Tarde                               |");
+                        System.out.println("| 3. Total Noite                               |");
+                        System.out.println("| 4. Total Sexta                               |");
+                        System.out.println("+----------------------------------------------+");
+                        int opListaSpinningSexta = sc.nextInt();
+                        switch (opListaSpinningSexta) {
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                            case 4:
+                                break;
+                        }
+                        //break;
+                    case 3:
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("|    *** RELAÇÃO VALORES SPINNING SABADO ***   |");
+                        System.out.println("+----------------------------------------------+");
+                        System.out.println("| 1. Total Manhã                               |");
+                        System.out.println("| 2. Total Tarde                               |");
+                        System.out.println("| 3. Total Noite                               |");
+                        System.out.println("| 4. Total Sabado                              |");
+                        System.out.println("+----------------------------------------------+");
+                        int opListaSpinningSabado = sc.nextInt();
+                        switch (opListaSpinningSabado) {
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                            case 4:
+                                break;
+                        }
+                        //break;
+                    case 4:
+                        System.out.println(sa.findAllAlunosSpinningByWeek());
+                }
+        }
     }
 
     public static void msgSucessoCadastro() {
