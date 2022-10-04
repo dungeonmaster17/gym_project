@@ -11,20 +11,54 @@ public class BoxeFinanceiroService implements BoxeGymService {
     public BoxeFinanceiroService() {
     }
 
+
     @Override
-    public Double getValorTotalAulaBoxeByManha(Boxe boxe){
-        return boxe.getHorariosManhaList().size() * VALOR_HORA_AULA_BOXE_MANHA;
+    public Double getValorTotalAulaBoxeByQuartaManha(Boxe boxe) {
+        return null;
     }
+
     @Override
-    public Double getValorTotalAulaBoxeByTarde(Boxe boxe){
-        return boxe.getHorariosTardeList().size() * VALOR_HORA_AULA_BOXE_TARDE;
+    public Double getValorTotalAulaBoxeByQuartaTarde(Boxe boxe) {
+        return null;
     }
+
     @Override
-    public Double getValorTotalAulaBoxeByNoite(Boxe boxe){
-        return boxe.getHorariosNoiteList().size() * VALOR_HORA_AULA_BOXE_NOITE;
+    public Double getValorTotalAulaBoxeByQuartaNoite(Boxe boxe) {
+        return null;
     }
+
     @Override
-    public Double getValorTotalAulaBoxeByDay(Boxe boxe){
-        return getValorTotalAulaBoxeByManha(boxe) + getValorTotalAulaBoxeByTarde(boxe) + getValorTotalAulaBoxeByNoite(boxe);
+    public Double getValorTotalAulaBoxeBySextaManha(Boxe boxe) {
+        return null;
+    }
+
+    @Override
+    public Double getValorTotalAulaBoxeBySextaTarde(Boxe boxe) {
+        return null;
+    }
+
+    @Override
+    public Double getValorTotalAulaBoxeBySextaNoite(Boxe boxe) {
+        return null;
+    }
+
+    @Override
+    public Double getValorTotalAulaBoxeBySabadoManha(Boxe boxe) {
+        return null;
+    }
+
+    @Override
+    public Double getValorTotalAulaBoxeBySabadoTarde(Boxe boxe) {
+        return null;
+    }
+
+    @Override
+    public Double getValorTotalAulaBoxeBySabadoNoite(Boxe boxe) {
+        return null;
+    }
+
+    @Override
+    public Double getValorTotalAulaBoxeByDay(Boxe boxe) {
+        return null;
     }
 }

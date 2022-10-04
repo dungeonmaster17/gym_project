@@ -12,19 +12,52 @@ public class SpinningFinanceiroService implements SpinningGymService {
     }
 
     @Override
-    public Double getValorTotalAulaSpinningByManha(Spinning spinning){
-        return spinning.getHorariosManhaList().size() * VALOR_HORA_AULA_SPINNING_MANHA;
+    public Double getValorTotalAulaSpinningByQuartaManha(Spinning spinning) {
+        return null;
     }
+
     @Override
-    public Double getValorTotalAulaSpinningByTarde(Spinning spinning){
-        return spinning.getHorariosTardeList().size() * VALOR_HORA_AULA_SPINNING_TARDE;
+    public Double getValorTotalAulaSpinningByQuartaTarde(Spinning spinning) {
+        return null;
     }
+
     @Override
-    public Double getValorTotalAulaSpinningByNoite(Spinning spinning){
-        return spinning.getHorariosNoiteList().size() * VALOR_HORA_AULA_SPINNING_NOITE;
+    public Double getValorTotalAulaSpinningByQuartaNoite(Spinning spinning) {
+        return null;
     }
+
+    @Override
+    public Double getValorTotalAulaSpinningBySextaManha(Spinning spinning) {
+        return null;
+    }
+
+    @Override
+    public Double getValorTotalAulaSpinningBySextaTarde(Spinning spinning) {
+        return null;
+    }
+
+    @Override
+    public Double getValorTotalAulaSpinningBySextaNoite(Spinning spinning) {
+        return null;
+    }
+
+    @Override
+    public Double getValorTotalAulaSpinningBySabadoManha(Spinning spinning) {
+        return null;
+    }
+
+    @Override
+    public Double getValorTotalAulaSpinningBySabadoTarde(Spinning spinning) {
+        return null;
+    }
+
+    @Override
+    public Double getValorTotalAulaSpinningBySabadoNoite(Spinning spinning) {
+        return null;
+    }
+
     @Override
     public Double getValorTotalAulaSpinningByDay(Spinning spinning) {
-        return getValorTotalAulaSpinningByManha(spinning) + getValorTotalAulaSpinningByTarde(spinning) + getValorTotalAulaSpinningByNoite(spinning);
+        return null;
     }
 }

@@ -4,11 +4,22 @@ import entidades.Boxe;
 
 public interface BoxeGymService {
 
-    Double getValorTotalAulaBoxeByManha(Boxe boxe);
+    Double getValorTotalAulaBoxeByQuartaManha(Boxe boxe);
 
-    Double getValorTotalAulaBoxeByTarde(Boxe boxe);
+    Double getValorTotalAulaBoxeByQuartaTarde(Boxe boxe);
 
-    Double getValorTotalAulaBoxeByNoite(Boxe boxe);
+    Double getValorTotalAulaBoxeByQuartaNoite(Boxe boxe);
 
+    Double getValorTotalAulaBoxeBySextaManha(Boxe boxe);
+
+    Double getValorTotalAulaBoxeBySextaTarde(Boxe boxe);
+
+    Double getValorTotalAulaBoxeBySextaNoite(Boxe boxe);
+
+    Double getValorTotalAulaBoxeBySabadoManha(Boxe boxe);
+
+    Double getValorTotalAulaBoxeBySabadoTarde(Boxe boxe);
+
+    Double getValorTotalAulaBoxeBySabadoNoite(Boxe boxe);
     Double getValorTotalAulaBoxeByDay(Boxe boxe);
 }
