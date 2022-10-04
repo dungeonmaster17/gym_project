@@ -287,20 +287,22 @@ public class Hidroginastica extends Sala {
         return " *** Aula Hidroginastica ***\n Professor(a): " + getProfissional().getNome();
     }
 
-    public String findAllAlunoHidroginasticaByWeek() {
+    public String findAllAlunoHidroginasticaByDay(String dia) {
         StringBuilder sb = new StringBuilder();
         if (!alunosList.isEmpty()) {
             int indiceAluno = 1;
             sb.append(" *** Todos o(s) Aluno(os) Hidroginastica ***\n");
             for (Aluno a : alunosList) {
-                sb.append("cod.: 00" + indiceAluno++ + "\n");
-                sb.append("Matricula: " + a.getMatricula() + " - ");
-                sb.append("Nome: " + a.getNome() + " " + a.getSobrenome() + " - ");
-                sb.append("Data Nasc.: " + a.getDataNascimento() + " - CPF: " + a.getCpf() + " - ");
-                sb.append("Email: " + a.getEmail());
-                sb.append(" - Horário Marcado: " + sdfHora.format(a.getHorarioAula()) + " - ");
-                sb.append("    " + a.getDiaAula() + "\n");
-                sb.append("\n");
+                if(a.getDiaAula().equals(dia)){
+                    sb.append("cod.: 00" + indiceAluno++ + "\n");
+                    sb.append("Matricula: " + a.getMatricula() + " - ");
+                    sb.append("Nome: " + a.getNome() + " " + a.getSobrenome() + " - ");
+                    sb.append("Data Nasc.: " + a.getDataNascimento() + " - CPF: " + a.getCpf() + " - ");
+                    sb.append("Email: " + a.getEmail());
+                    sb.append(" - Horário Marcado: " + sdfHora.format(a.getHorarioAula()) + " - ");
+                    sb.append("    " + a.getDiaAula() + "\n");
+                    sb.append("\n");
+                }
             }
             return sb.toString();
         }

@@ -242,7 +242,7 @@ public class Program {
                                 System.out.println(ba.findAllAlunoBoxeByDayAndHour("qua", sdfHora.parse("19:00")));
                                 break;
                             case 4:
-                                //System.out.println(ba.findAllAlunoBoxeByWeek());
+                                System.out.println(ba.findAllAlunoBoxeByDay("qua"));
                         }
                         break;
                     case 2:
@@ -266,7 +266,7 @@ public class Program {
                                 System.out.println(ba.findAllAlunoBoxeByDayAndHour("sex", sdfHora.parse("19:00")));
                                 break;
                             case 4:
-                                //System.out.println(ba.findAllAlunoBoxeByWeek());
+                                System.out.println(ba.findAllAlunoBoxeByDay("sex"));
                         }
                         break;
                     case 3:
@@ -290,7 +290,7 @@ public class Program {
                                 System.out.println(ba.findAllAlunoBoxeByDayAndHour("sab", sdfHora.parse("19:00")));
                                 break;
                             case 4:
-                                //System.out.println(ba.findAllAlunoBoxeByWeek());
+                                System.out.println(ba.findAllAlunoBoxeByDay("sab"));
                         }
                         break;
                 }
@@ -316,16 +316,14 @@ public class Program {
                         int opListaHidroQuarta = sc.nextInt();
                         switch (opListaHidroQuarta) {
                             case 1:
-                                //System.out.println(ba.findAllAlunoBoxeByDayAndHour("qua", sdfHora.parse("09:00")));
+                                System.out.println(ha.findAllAlunoHidroginasticaByDayAndHour("qua", sdfHora.parse("09:00")));
                                 break;
                             case 2:
-                                //System.out.println(ba.findAllAlunoBoxeByDayAndHour("qua", sdfHora.parse("15:00")));
-                                break;
+                                System.out.println(ha.findAllAlunoHidroginasticaByDayAndHour("qua", sdfHora.parse("15:00")));                                break;
                             case 3:
-                                //System.out.println(ba.findAllAlunoBoxeByDayAndHour("qua", sdfHora.parse("19:00")));
-                                break;
+                                System.out.println(ha.findAllAlunoHidroginasticaByDayAndHour("qua", sdfHora.parse("19:00")));                                break;
                             case 4:
-                                //System.out.println(ba.findAllAlunoBoxeByWeek());
+                                System.out.println(ha.findAllAlunoHidroginasticaByDay("qua"));
                         }
                         break;
                     case 2:
@@ -340,16 +338,14 @@ public class Program {
                         int opListaHidroSexta = sc.nextInt();
                         switch (opListaHidroSexta) {
                             case 1:
-                                System.out.println(ba.findAllAlunoBoxeByDayAndHour("sex", sdfHora.parse("09:00")));
+                                System.out.println(ha.findAllAlunoHidroginasticaByDayAndHour("sex", sdfHora.parse("09:00")));
                                 break;
                             case 2:
-                                System.out.println(ba.findAllAlunoBoxeByDayAndHour("sex", sdfHora.parse("15:00")));
-                                break;
+                                System.out.println(ha.findAllAlunoHidroginasticaByDayAndHour("sex", sdfHora.parse("15:00")));                                break;
                             case 3:
-                                System.out.println(ba.findAllAlunoBoxeByDayAndHour("sex", sdfHora.parse("19:00")));
-                                break;
+                                System.out.println(ha.findAllAlunoHidroginasticaByDayAndHour("sex", sdfHora.parse("19:00")));                                break;
                             case 4:
-                                //System.out.println(ba.findAllAlunoBoxeByWeek());
+                                System.out.println(ha.findAllAlunoHidroginasticaByDay("sex"));
                         }
                         break;
                     case 3:
@@ -364,16 +360,14 @@ public class Program {
                         int opListaHidroSabado = sc.nextInt();
                         switch (opListaHidroSabado) {
                             case 1:
-                                System.out.println(ba.findAllAlunoBoxeByDayAndHour("sab", sdfHora.parse("09:00")));
+                                System.out.println(ha.findAllAlunoHidroginasticaByDayAndHour("sab", sdfHora.parse("09:00")));
                                 break;
                             case 2:
-                                System.out.println(ba.findAllAlunoBoxeByDayAndHour("sab", sdfHora.parse("15:00")));
-                                break;
+                                System.out.println(ha.findAllAlunoHidroginasticaByDayAndHour("sab", sdfHora.parse("15:00")));                                break;
                             case 3:
-                                System.out.println(ba.findAllAlunoBoxeByDayAndHour("sab", sdfHora.parse("19:00")));
-                                break;
+                                System.out.println(ha.findAllAlunoHidroginasticaByDayAndHour("sab", sdfHora.parse("19:00")));                                break;
                             case 4:
-                                //System.out.println(ba.findAllAlunoBoxeByWeek());
+                                System.out.println(ha.findAllAlunoHidroginasticaByDay("sab"));
                         }
                         break;
                 }
@@ -399,16 +393,16 @@ public class Program {
                         int opListaSpinningQuarta = sc.nextInt();
                         switch (opListaSpinningQuarta) {
                             case 1:
-                                //System.out.println(ba.findAllAlunoBoxeByDayAndHour("qua", sdfHora.parse("09:00")));
+                                System.out.println(sa.findAllAlunoSpinningByDayAndHour("qua", sdfHora.parse("09:00")));
                                 break;
                             case 2:
-                                //System.out.println(ba.findAllAlunoBoxeByDayAndHour("qua", sdfHora.parse("15:00")));
+                                System.out.println(sa.findAllAlunoSpinningByDayAndHour("qua", sdfHora.parse("15:00")));
                                 break;
                             case 3:
-                                //System.out.println(ba.findAllAlunoBoxeByDayAndHour("qua", sdfHora.parse("19:00")));
+                                System.out.println(sa.findAllAlunoSpinningByDayAndHour("qua", sdfHora.parse("19:00")));
                                 break;
                             case 4:
-                                //System.out.println(ba.findAllAlunoBoxeByWeek());
+                                System.out.println(sa.findAllAlunoSpinningByDay("qua"));
                         }
                         break;
                     case 2:
@@ -423,16 +417,16 @@ public class Program {
                         int opListaSpinningSexta = sc.nextInt();
                         switch (opListaSpinningSexta) {
                             case 1:
-                                //System.out.println(ba.findAllAlunoBoxeByDayAndHour("sex", sdfHora.parse("09:00")));
+                                System.out.println(sa.findAllAlunoSpinningByDayAndHour("sex", sdfHora.parse("09:00")));
                                 break;
                             case 2:
-                                //System.out.println(ba.findAllAlunoBoxeByDayAndHour("sex", sdfHora.parse("15:00")));
+                                System.out.println(sa.findAllAlunoSpinningByDayAndHour("sex", sdfHora.parse("15:00")));
                                 break;
                             case 3:
-                                //System.out.println(ba.findAllAlunoBoxeByDayAndHour("sex", sdfHora.parse("19:00")));
+                                System.out.println(sa.findAllAlunoSpinningByDayAndHour("sex", sdfHora.parse("19:00")));
                                 break;
                             case 4:
-                                //System.out.println(ba.findAllAlunoBoxeByWeek());
+                                System.out.println(sa.findAllAlunoSpinningByDay("sex"));
                         }
                         break;
                     case 3:
@@ -447,16 +441,16 @@ public class Program {
                         int opListaSpinningSabado = sc.nextInt();
                         switch (opListaSpinningSabado) {
                             case 1:
-                                //System.out.println(ba.findAllAlunoBoxeByDayAndHour("sab", sdfHora.parse("09:00")));
+                                System.out.println(sa.findAllAlunoSpinningByDayAndHour("sab", sdfHora.parse("09:00")));
                                 break;
                             case 2:
-                                //System.out.println(ba.findAllAlunoBoxeByDayAndHour("sab", sdfHora.parse("15:00")));
+                                System.out.println(sa.findAllAlunoSpinningByDayAndHour("sab", sdfHora.parse("15:00")));
                                 break;
                             case 3:
-                                //System.out.println(ba.findAllAlunoBoxeByDayAndHour("sab", sdfHora.parse("19:00")));
+                                System.out.println(sa.findAllAlunoSpinningByDayAndHour("sab", sdfHora.parse("19:00")));
                                 break;
                             case 4:
-                                //System.out.println(ba.findAllAlunoBoxeByWeek());
+                                System.out.println(sa.findAllAlunoSpinningByDay("sab"));
                         }
                         break;
                 }

@@ -288,20 +288,22 @@ public class Boxe extends Sala {
         return " *** Aula Boxe ***\n Professor(a): " + getProfissional().getNome() + "\n Licença: " + getProfissional().getLicenca();
     }
 
-    public String findAllAlunoBoxeByWeek() {
+    public String findAllAlunoBoxeByDay(String dia) {
         StringBuilder sb = new StringBuilder();
         if (!alunosList.isEmpty()) {
             int indiceAluno = 1;
             sb.append(" *** Todos o(s) Aluno(os) Boxe ***\n");
             for (Aluno a : alunosList) {
-                sb.append("cod.: 00" + indiceAluno++ + "\n");
-                sb.append("Matricula: " + a.getMatricula() + " - ");
-                sb.append("Nome: " + a.getNome() + " " + a.getSobrenome() + " - ");
-                sb.append("Data Nasc.: " + a.getDataNascimento() + " - CPF: " + a.getCpf() + " - ");
-                sb.append("Email: " + a.getEmail());
-                sb.append(" - Horário Marcado: " + sdfHora.format(a.getHorarioAula()) + " - ");
-                sb.append("    " + a.getDiaAula() + "\n");
-                sb.append("\n");
+                if(a.getDiaAula().equals(dia)){
+                    sb.append("cod.: 00" + indiceAluno++ + "\n");
+                    sb.append("Matricula: " + a.getMatricula() + " - ");
+                    sb.append("Nome: " + a.getNome() + " " + a.getSobrenome() + " - ");
+                    sb.append("Data Nasc.: " + a.getDataNascimento() + " - CPF: " + a.getCpf() + " - ");
+                    sb.append("Email: " + a.getEmail());
+                    sb.append(" - Horário Marcado: " + sdfHora.format(a.getHorarioAula()) + " - ");
+                    sb.append("    " + a.getDiaAula() + "\n");
+                    sb.append("\n");
+                }
             }
             return sb.toString();
         }
