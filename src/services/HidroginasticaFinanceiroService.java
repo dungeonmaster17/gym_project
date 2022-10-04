@@ -14,51 +14,67 @@ public class HidroginasticaFinanceiroService implements HidroginasticaGymService
 
     @Override
     public Double getValorTotalAulaHidroginasticaByQuartaManha(Hidroginastica hidroginastica) {
-        return null;
+        return hidroginastica.getHorariosQuartaManhaList().size() * VALOR_HORA_AULA_HIDROGINASTICA_MANHA;
     }
 
     @Override
     public Double getValorTotalAulaHidroginasticaByQuartaTarde(Hidroginastica hidroginastica) {
-        return null;
+        return hidroginastica.getHorariosQuartaTardeList().size() * VALOR_HORA_AULA_HIDROGINASTICA_TARDE;
     }
 
     @Override
     public Double getValorTotalAulaHidroginasticaByQuartaNoite(Hidroginastica hidroginastica) {
-        return null;
+        return hidroginastica.getHorariosQuartaNoiteList().size() * VALOR_HORA_AULA_HIDROGINASTICA_NOITE;
     }
 
     @Override
     public Double getValorTotalAulaHidroginasticaBySextaManha(Hidroginastica hidroginastica) {
-        return null;
+        return hidroginastica.getHorariosSextaManhaList().size() * VALOR_HORA_AULA_HIDROGINASTICA_MANHA;
     }
 
     @Override
     public Double getValorTotalAulaHidroginasticaBySextaTarde(Hidroginastica hidroginastica) {
-        return null;
+        return hidroginastica.getHorariosSextaTardeList().size() * VALOR_HORA_AULA_HIDROGINASTICA_TARDE;
     }
 
     @Override
     public Double getValorTotalAulaHidroginasticaBySextaNoite(Hidroginastica hidroginastica) {
-        return null;
+        return hidroginastica.getHorariosSextaNoiteList().size() * VALOR_HORA_AULA_HIDROGINASTICA_NOITE;
     }
 
     @Override
     public Double getValorTotalAulaHidroginasticaBySabadoManha(Hidroginastica hidroginastica) {
-        return null;
+        return hidroginastica.getHorariosSabadoManhaList().size() * VALOR_HORA_AULA_HIDROGINASTICA_MANHA;
     }
 
     @Override
     public Double getValorTotalAulaHidroginasticaBySabadoTarde(Hidroginastica hidroginastica) {
-        return null;
+        return hidroginastica.getHorariosSabadoTardeList().size() * VALOR_HORA_AULA_HIDROGINASTICA_TARDE;
     }
 
     @Override
     public Double getValorTotalAulaHidroginasticaBySabadoNoite(Hidroginastica hidroginastica) {
-        return null;
+        return hidroginastica.getHorariosSabadoNoiteList().size() * VALOR_HORA_AULA_HIDROGINASTICA_NOITE;
     }
 
     @Override
-    public Double getValorTotalAulaHidroginasticaByDay(Hidroginastica hidroginastica) {
-        return null;
+    public Double getValorTotalAulaHidroginasticaByQuarta(Hidroginastica hidroginastica) {
+        return getValorTotalAulaHidroginasticaByQuartaManha(hidroginastica) + getValorTotalAulaHidroginasticaByQuartaTarde(hidroginastica) + getValorTotalAulaHidroginasticaByQuartaNoite(hidroginastica);
+    }
+
+    @Override
+    public Double getValorTotalAulaHidroginasticaBySexta(Hidroginastica hidroginastica) {
+        return getValorTotalAulaHidroginasticaBySextaManha(hidroginastica) + getValorTotalAulaHidroginasticaBySextaTarde(hidroginastica) + getValorTotalAulaHidroginasticaBySextaNoite(hidroginastica);
+    }
+
+    @Override
+    public Double getValorTotalAulaHidroginasticaBySabado(Hidroginastica hidroginastica) {
+        return getValorTotalAulaHidroginasticaBySabadoManha(hidroginastica) + getValorTotalAulaHidroginasticaBySabadoTarde(hidroginastica) + getValorTotalAulaHidroginasticaBySabadoNoite(hidroginastica);
+    }
+
+
+    @Override
+    public Double getValorTotalAulaHidroginasticaByWeek(Hidroginastica hidroginastica) {
+        return getValorTotalAulaHidroginasticaByQuarta(hidroginastica) + getValorTotalAulaHidroginasticaBySexta(hidroginastica) + getValorTotalAulaHidroginasticaBySabado(hidroginastica);
     }
 }

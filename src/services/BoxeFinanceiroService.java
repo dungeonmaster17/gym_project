@@ -70,4 +70,9 @@ public class BoxeFinanceiroService implements BoxeGymService {
     public Double getValorTotalAulaBoxeBySabado(Boxe boxe) {
         return getValorTotalAulaBoxeBySabadoManha(boxe) + getValorTotalAulaBoxeBySabadoTarde(boxe) + getValorTotalAulaBoxeBySabadoNoite(boxe);
     }
+
+    @Override
+    public Double getValorTotalAulaBoxeByWeek(Boxe boxe) {
+        return getValorTotalAulaBoxeByQuarta(boxe) + getValorTotalAulaBoxeBySexta(boxe) + getValorTotalAulaBoxeBySabado(boxe);
+    }
 }

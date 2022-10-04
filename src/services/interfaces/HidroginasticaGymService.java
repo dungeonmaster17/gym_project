@@ -20,5 +20,11 @@ public interface HidroginasticaGymService {
     Double getValorTotalAulaHidroginasticaBySabadoTarde(Hidroginastica hidroginastica);
 
     Double getValorTotalAulaHidroginasticaBySabadoNoite(Hidroginastica hidroginastica);
-    Double getValorTotalAulaHidroginasticaByDay(Hidroginastica hidroginastica);
+    Double getValorTotalAulaHidroginasticaByQuarta(Hidroginastica hidroginastica);
+
+    Double getValorTotalAulaHidroginasticaBySexta(Hidroginastica hidroginastica);
+
+    Double getValorTotalAulaHidroginasticaBySabado(Hidroginastica hidroginastica);
+
+    Double getValorTotalAulaHidroginasticaByWeek(Hidroginastica hidroginastica);
 }

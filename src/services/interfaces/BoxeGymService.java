@@ -27,4 +27,6 @@ public interface BoxeGymService {
     Double getValorTotalAulaBoxeBySexta(Boxe boxe);
 
     Double getValorTotalAulaBoxeBySabado(Boxe boxe);
+
+    Double getValorTotalAulaBoxeByWeek(Boxe boxe);
 }

@@ -22,5 +22,11 @@ public interface SpinningGymService {
 
     Double getValorTotalAulaSpinningBySabadoNoite(Spinning spinning);
 
-    Double getValorTotalAulaSpinningByDay(Spinning spinning);
+    Double getValorTotalAulaSpinningByQuarta(Spinning spinning);
+
+    Double getValorTotalAulaSpinningBySexta(Spinning spinning);
+
+    Double getValorTotalAulaSpinningBySabado(Spinning spinning);
+
+    Double getValorTotalAulaSpinningByWeek(Spinning spinning);
 }
