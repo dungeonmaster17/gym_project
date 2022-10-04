@@ -306,7 +306,7 @@ public class Hidroginastica extends Sala {
             }
             return sb.toString();
         }
-        return "Sem alunos para a aula selecionada!";
+        return String.format("Sem alunos para '%s'!", dia.toUpperCase());
     }
 
     public String findAllAlunoHidroginasticaByDayAndHour(String dia, Date hora) {
@@ -328,6 +328,26 @@ public class Hidroginastica extends Sala {
             }
             return sb.toString();
         }
-        return "Sem alunos para a aula selecionada!";
+        return String.format("Sem alunos para '%s' ás '%s' horas!", dia.toUpperCase(), sdfHora.format(hora));
+    }
+
+    public String findAllAlunoHidroginasticaByWeek(){
+        StringBuilder sb = new StringBuilder();
+        if (!alunosList.isEmpty()) {
+            int indiceAluno = 1;
+            sb.append(" *** Aluno(os) Hidroginastica ***\n");
+            for (Aluno a : alunosList) {
+                sb.append("cod.: 00" + indiceAluno++ + "\n");
+                sb.append("Matricula: " + a.getMatricula() + " - ");
+                sb.append("Nome: " + a.getNome() + " " + a.getSobrenome() + " - ");
+                sb.append("Data Nasc.: " + a.getDataNascimento() + " - CPF: " + a.getCpf() + " - ");
+                sb.append("Email: " + a.getEmail());
+                sb.append(" - Horário Marcado: " + sdfHora.format(a.getHorarioAula()) + " - ");
+                sb.append("" + a.getDiaAula() + "\n");
+                sb.append("\n");
+            }
+            return sb.toString();
+        }
+        return "Sem alunos para esta semana!";
     }
 }
