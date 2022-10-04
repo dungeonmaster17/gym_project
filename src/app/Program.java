@@ -124,7 +124,7 @@ public class Program {
                     System.out.println("|    .Horários     ~    09:00 - 15:00 - 19:00  |");
                     System.out.println("+----------------------------------------------+");
                     System.out.print("| DIA (qua/sex/sab): ");
-                    aluno.setDiaAula(sc.next());
+                    aluno.setDiaAula(sc.next().toLowerCase());
                     System.out.print("| HORÁRIO (HH:mm): ");
                     aluno.setHorarioAula(sdfHora.parse(sc.next()));
                     if (ba.isFull(aluno)) {
@@ -144,7 +144,7 @@ public class Program {
                     System.out.println("|    .Horários     ~    09:00 - 15:00 - 19:00  |");
                     System.out.println("+----------------------------------------------+");
                     System.out.print("| DIA (qua/sex/sab): ");
-                    aluno.setDiaAula(sc.next());
+                    aluno.setDiaAula(sc.next().toLowerCase());
                     System.out.print("| HORÁRIO (HH:mm): ");
                     aluno.setHorarioAula(sdfHora.parse(sc.next()));
                     if (ha.isFull(aluno)) {
@@ -162,7 +162,7 @@ public class Program {
                     System.out.println("|    .Horários     ~    09:00 - 15:00 - 19:00  |");
                     System.out.println("+----------------------------------------------+");
                     System.out.print("| DIA (qua/sex/sab): ");
-                    aluno.setDiaAula(sc.next());
+                    aluno.setDiaAula(sc.next().toLowerCase());
                     System.out.print("| HORÁRIO (HH:mm): ");
                     aluno.setHorarioAula(sdfHora.parse(sc.next()));
                     if (sa.isFull(aluno)) {
@@ -186,13 +186,13 @@ public class Program {
         System.out.print("| Matricula: ");
         aluno.setMatricula(sc.nextInt());
         System.out.print("| Nome: ");
-        aluno.setNome(sc.next());
+        aluno.setNome(sc.next().toUpperCase());
         System.out.print("| Sobrenome: ");
-        aluno.setSobrenome(sc.next());
+        aluno.setSobrenome(sc.next().toUpperCase());
         System.out.print("| Data Nascimento: ");
-        aluno.setDataNascimento(sc.next());
+        aluno.setDataNascimento(sc.next().toUpperCase());
         System.out.print("| Email: ");
-        aluno.setEmail(sc.next());
+        aluno.setEmail(sc.next().toLowerCase());
         System.out.print("| CPF: ");
         aluno.setCpf(sc.next());
         msgSucessoCadastro();
@@ -509,9 +509,9 @@ public class Program {
         System.out.println("|        *** CADASTRO PROFISSIONAL ***         |");
         System.out.println("+----------------------------------------------+");
         System.out.print("| Nome: ");
-        profissional.setNome(sc.next());
+        profissional.setNome(sc.next().toUpperCase());
         System.out.print("| Licença: ");
-        profissional.setLicenca(sc.next());
+        profissional.setLicenca(sc.next().toUpperCase());
         System.out.println("|           *** AULA MINISTRADA ***            |");
         System.out.println("+----------------------------------------------+");
         System.out.println("| 1.Boxe  -   2.Hidroginastica   - 3.Spinning  |");
@@ -560,7 +560,7 @@ public class Program {
         System.out.print("| AULA: ");
         int opFinN = sc.nextInt();
         System.out.print("| TURNO/DIA: ");
-        char opFinL = sc.next().charAt(0);
+        char opFinL = sc.next().toLowerCase().charAt(0);
         System.out.println("+----------------------------------------------+");
         switch (opFinN) {
             case 1:
